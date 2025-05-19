@@ -1,0 +1,423 @@
+<style>
+    @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css");
+
+    body {
+        background-color: #f1f1f1;
+    }
+
+    :root {
+        --main-color: #8e9a4c;
+        --secondary-color: #fdfde8;
+        --font-color-light: white;
+        --font-color-dark: black;
+    }
+
+    .card {
+        margin: 0 auto;
+        width: 580px;
+    }
+
+    .bi-pause-circle {
+        color: grey;
+    }
+
+    .bi-check-circle {
+        color: green;
+    }
+
+    .bi-play-circle {
+        color: orange;
+    }
+
+    .bi-x-circle {
+        color: red;
+    }
+
+    input[type="checkbox"] {
+        display: none;
+    }
+
+    input[type="checkbox"]:checked ~ .history-list {
+        display: block;
+    }
+
+    input[type="checkbox"]:checked ~ .pokemon-content {
+        display: block;
+    }
+
+    .history-list, .pokemon-content, .relationship-content {
+        display: none;
+    }
+
+    .history {
+        background-color: white;
+        border: 1px solid var(--main-color);
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+
+    label {
+        cursor: pointer;
+        text-align: center;
+        display: block;
+        font-size: 1.2em;
+        border: 1px solid var(--main-color);
+        background-color: var(--secondary-color);
+        padding: 5px 0;
+    }
+
+    .history-list {
+        margin-top: 10px;
+        border: 1px solid var(--main-color);
+        background-color: var(--secondary-color);
+        padding: 5px;
+    }
+
+    a, a:visited {
+        color: var(--main-color);
+    }
+
+    a:hover {
+        color: blue;
+    }
+
+    .pokemon label {
+        max-height: 40px;
+    }
+
+    .pokemon label img {
+        max-height: 40px;
+        width: fit-content;
+        object-fit: none;
+    }
+
+    .pokemon-content {
+        margin-top: 10px;
+    }
+
+    .pokemon-content div:first-child {
+        display: grid;
+        grid-template-columns: 0.5fr 1fr 0.75fr;
+    }
+
+    .pokemon-content div:first-child div {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: center;
+        padding: 5px;
+    }
+
+    .pokemon-content div:first-child div:nth-child(3) {
+        flex-direction: row;
+    }
+
+    .pokemon-content div:first-child div:nth-child(3) hr {
+        width: 75%;
+    }
+
+    .pokemon-content div:first-child div:nth-child(3) span:nth-of-type(2n+1) {
+        width: 30%;
+    }
+
+    .pokemon-content div:first-child div:first-child .sprite {
+        width: 96px;
+        height: 96px;
+        object-fit: none;
+    }
+
+    .pokemon-additional {
+        padding: 10px;
+    }
+
+    .relationships {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-gap: 10px;
+        grid-auto-flow: dense;
+    }
+
+    .relationships label, .relationships img {
+        max-height: 320px;
+        padding: 0;
+        width: 105px;
+        height: fit-content;
+    }
+
+    input[type="checkbox"]:checked + label {
+        border: 3px solid var(--main-color);
+    }
+
+    input[type="checkbox"]:checked + * +.relationship-content {
+        display: block;
+        grid-column: 1 / -1;
+    }
+
+    .relationship-content {
+        border: 1px solid var(--main-color);
+        background-color: var(--secondary-color);
+        padding: 10px;
+    }
+
+    .relationship-content h1 {
+        margin: 0;
+        color: var(--main-color);
+        font-size: 1.2em;
+        font-weight: bold;
+    }
+
+    .relationship-content span {
+        color: var(--main-color);
+    }
+
+</style>
+
+<meta charset="UTF-8">
+<div class="card">
+    <div class="history">
+        <label for="history2024">2024</label>
+        <input type="checkbox" name="histories" id="history2024">
+        <div class="history-list">
+            <i class="bi bi-pause-circle"></i> Hors Série #1 — Floralis Legenda ☞ Événement de Printemps (2024) — solo — <a href="">www</a> <br>
+            <i class="bi bi-check-circle"></i> Préface — Exploratrix Nativitas — solo — <a href="">www</a><br>
+            <i class="bi bi-play-circle"></i> Hors Série #2 — Quid Pro Quo — ft. Camille Mistouflet — <a href="">www</a><br>
+            <i class="bi bi-x-circle"></i> Chapitre 1 — Litus Exploratio et Feriae et Reditio — solo — <a href="">www</a><br>
+        </div>
+    </div>
+
+    <div class="history">
+        <label for="history2025">2025</label>
+        <input type="checkbox" name="histories" id="history2025">
+        <div class="history-list">
+            <i class="bi bi-pause-circle"></i> Hors Série #1 — Floralis Legenda ☞ Événement de Printemps (2024) — solo — <a href="">www</a> <br>
+            <i class="bi bi-check-circle"></i> Préface — Exploratrix Nativitas — solo — <a href="">www</a><br>
+            <i class="bi bi-play-circle"></i> Hors Série #2 — Quid Pro Quo — ft. Camille Mistouflet — <a href="">www</a><br>
+            <i class="bi bi-x-circle"></i> Chapitre 1 — Litus Exploratio et Feriae et Reditio — solo — <a href="">www</a><br>
+        </div>
+    </div>
+
+    <i class="bi bi-pause-circle"></i> En pause - <i class="bi bi-check-circle"></i> Fini - <i class="bi bi-play-circle"></i> En cours - <i class="bi bi-x-circle"></i> Abandonné
+</div>
+
+<hr>
+
+<meta charset="UTF-8">
+<div class="card">
+    <div class="pokemon">
+        <label for="pok1" style="background: coral; border: 1px solid orangered;"><img src="https://t.ly/h3vCk"> <span><img src="https://www.pokepedia.fr/images/8/88/Miniature_Type_Feu_RFVF.png"></span></label>
+        <input type="checkbox" name="pokemon" id="pok1">
+        <div class="pokemon-content" style="background: #ff7f505e; border: 1px solid orangered;">
+            <div>
+                <div>
+                    <img class="sprite" src="https://t.ly/h3vCk">
+                    CHANTICO <br>
+                    <span>
+                        <img src="https://www.pokepedia.fr/images/8/88/Miniature_Type_Feu_RFVF.png">
+                    </span>
+                </div>
+                <div style="border-left: 1px solid orangered; border-right: 1px solid orangered;">
+                    <span>Points de Vie • 39 + 0 = 39</span>
+                    <span>Attaque • 52 + 0 = 52</span>
+                    <span>Défense • 43 + 0 = 43</span>
+                    <span>Attaque Spéciale • 60 + 0 = 60</span>
+                    <span>Défense Spéciale • 50 + 0 = 50</span>
+                    <span>Vitesse • 65 + 0 = 65</span>
+
+                    <span>Points d'Expérience • 8*35 = 280</span>
+                </div>
+                <div>
+                    <span>
+                        <img src="https://www.pokepedia.fr/images/3/3f/Miniature_Type_Normal_RFVF.png">
+                    </span>
+                    <span>
+                        Coupe (CS) <br>
+                        Charge<br>
+                        Groz'Yeux<br>
+                        Brouillard<br>
+                        Vivie-Attaque<br>
+                        Boul'Armure<br>
+                    </span>
+                    <hr style="border-color: orangered;">
+                    <span>
+                        <img src="https://www.pokepedia.fr/images/8/88/Miniature_Type_Feu_RFVF.png">
+                    </span>
+                    <span>
+                        Flammèche<br>
+                        Roue de Feu<br>
+                        Nitrocharge<br>
+                        Ébullilave<br>
+                        Lance-Flammes<br>
+                    </span>
+                </div>
+            </div>
+            <div style="border-top: 1px solid orangered;" class="pokemon-additional">
+                INFO BLABLABLA + informations INFO BLABLABLA + informations INFO BLABLABLA
+                + informations INFO BLABLABLA + informations INFO BLABLABLA + informations
+                INFO BLABLABLA + informations INFO BLABLABLA + informations INFO BLABLABLA +
+                informations INFO BLABLABLA + informations INFO BLABLABLA + informations
+            </div>
+        </div>
+    </div>
+
+    <br>
+
+    <div class="pokemon">
+        <label for="pok2" style="background: #c1b3b3; border: 1px solid grey;">
+            <img src="https://img.pokemondb.net/sprites/black-white/normal/escavalier.png">
+            <span>
+                <img src="https://www.pokepedia.fr/images/7/78/Miniature_Type_Insecte_RFVF.png">
+                <img src="https://www.pokepedia.fr/images/1/16/Miniature_Type_Acier_RFVF.png">
+            </span>
+        </label>
+        <input type="checkbox" name="pokemon" id="pok2">
+        <div class="pokemon-content" style="background: rgba(227,213,213,0.48); border: 1px solid grey;">
+            <div>
+                <div>
+                    <img class="sprite" src="https://img.pokemondb.net/sprites/black-white/normal/escavalier.png">
+                    LANCELOT <br>
+                    <span>
+                        <img src="https://www.pokepedia.fr/images/7/78/Miniature_Type_Insecte_RFVF.png">
+                        <img src="https://www.pokepedia.fr/images/1/16/Miniature_Type_Acier_RFVF.png">
+                    </span>
+                </div>
+                <div style="border-left: 1px solid grey; border-right: 1px solid grey;">
+                    <span>Points de Vie • 39 + 0 = 39</span>
+                    <span>Attaque • 52 + 0 = 52</span>
+                    <span>Défense • 43 + 0 = 43</span>
+                    <span>Attaque Spéciale • 60 + 0 = 60</span>
+                    <span>Défense Spéciale • 50 + 0 = 50</span>
+                    <span>Vitesse • 65 + 0 = 65</span>
+
+                    <span>Points d'Expérience • 8*35 = 280</span>
+                </div>
+                <div>
+                    <span>
+                        <img src="https://www.pokepedia.fr/images/3/3f/Miniature_Type_Normal_RFVF.png">
+                    </span>
+                    <span>
+                        Coupe (CS)<br>
+                        Bélier<br>
+                        Damoclès<br>
+                        Groz'Yeux<br>
+                        Gigotage<br>
+                        Grimace<br>
+                        Ténacité<br>
+                        Faux-Chage<br>
+                        Furie<br>
+                        Coup d'Boule<br>
+                    </span>
+                    <hr style="border-color: grey;">
+                    <span>
+                        <img src="https://www.pokepedia.fr/images/3/38/Miniature_Type_Combat_RFVF.png">
+                    </span>
+                    <span>
+                        Éclate-Roc (CS)<br>
+                        Prévention<br>
+                        Contre<br>
+                    </span>
+                    <hr style="border-color: grey;">
+                    <span>
+                        <img src="https://www.pokepedia.fr/images/f/f6/Miniature_Type_Vol_RFVF.png">
+                    </span>
+                    <span>
+                        Picpic<br>
+                    </span>
+                    <hr style="border-color: grey;">
+                    <span>
+                        <img src="https://www.pokepedia.fr/images/7/78/Miniature_Type_Insecte_RFVF.png">
+                    </span>
+                    <span>
+                        Taillade<br>
+                        Dard Mortel<br>
+                        Double Dard<br>
+                    </span>
+                    <hr style="border-color: grey;">
+                    <span>
+                        <img src="https://www.pokepedia.fr/images/6/65/Miniature_Type_Poison_RFVF.png">
+                    </span>
+                    <span>
+                        Bombe Acide<br>
+                    </span>
+                </div>
+            </div>
+            <div style="border-top: 1px solid grey;" class="pokemon-additional">
+                INFO BLABLABLA + informations INFO BLABLABLA + informations INFO BLABLABLA
+                + informations INFO BLABLABLA + informations INFO BLABLABLA + informations
+                INFO BLABLABLA + informations INFO BLABLABLA + informations INFO BLABLABLA +
+                informations INFO BLABLABLA + informations INFO BLABLABLA + informations
+            </div>
+        </div>
+    </div>
+</div>
+
+<hr>
+
+<div class="card">
+    <div class="relationships">
+        <input type="checkbox" name="relationships" id="relationship1">
+        <label for="relationship1">
+            <img src="https://i.servimg.com/u/f37/19/16/03/03/ia114.png">
+        </label>
+        <div class="relationship-content">
+            <h1>Caroline Mistouflet</h1>
+            <span>sujet(s) en commun</span> : Quid Pro Quo <br>
+            <span>pkmn(s) connu(s)</span> : Evoli, Mystherbe S <br>
+            Une rencontre totalement fortuite sur un fond d'imbroglio comique. L'une pense avoir affaire avec une éthologue expérimentée ; l'autre pense retrouver une collègue d'une organisation de l'ombre. La situation promet d'être comique et incroyablement lunaire, au fur et à mesure que le point de l'Evoli de Camille se déroule...
+        </div>
+
+        <input type="checkbox" name="relationships" id="relationship2">
+        <label for="relationship2">
+            <img src="https://i.servimg.com/u/f18/19/27/40/26/image157.png">
+        </label>
+        <div class="relationship-content">
+            <h1>Rurha DE VIL</h1>
+            <span>sujet(s) en commun</span> : Le Festival des Trois Dragons. <br>
+            <span>pkmn(s) connu(s)</span> : Starmobile S <br>
+            Dresseur rencontré sur Célestia. Venu avec son équipe entièrement composé d'hommes, il semble faire partie d'une troupe partant à la recherche du folklore des quatre coins du globe, prêt à s'habiller et à se grimer en conséquence pour faire la meilleure des impressions. Cela dit, à première vue, Ajora pense qu'il est quand même un excentrique qu'il faut surveiller du coin de l'œil…
+        </div>
+
+        <input type="checkbox" name="relationships" id="relationship3">
+        <label for="relationship3">
+            <img src="https://i.imgur.com/R7IBBY0.png">
+        </label>
+        <div class="relationship-content">
+            <h1>Ariana Montoya</h1>
+            <span>sujet(s) en commun</span> : /  <br>
+            <span>pkmn(s) connu(s)</span> : / <br>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sed felis et ante sodales bibendum vitae sed mi. In nisl risus, dictum quis luctus id, tincidunt vitae metus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam et augue lacus. In ac blandit metus, ut scelerisque felis. Vivamus porta venenatis finibus. Duis pretium sem eget mi hendrerit facilisis. Quisque elementum leo vel nibh consequat venenatis. Morbi ut nibh in nisi feugiat maximus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+        </div>
+
+        <input type="checkbox" name="relationships" id="relationship4">
+        <label for="relationship4">
+            <img src="https://i.ibb.co/kVJLTQW6/Honokaprintemps-copie.png">
+        </label>
+        <div class="relationship-content">
+            <h1>Honoka Sakurame</h1>
+            <span>sujet(s) en commun</span> : / <br>
+            <span>pkmn(s) connu(s)</span> : / <br>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sed felis et ante sodales bibendum vitae sed mi. In nisl risus, dictum quis luctus id, tincidunt vitae metus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam et augue lacus. In ac blandit metus, ut scelerisque felis. Vivamus porta venenatis finibus. Duis pretium sem eget mi hendrerit facilisis. Quisque elementum leo vel nibh consequat venenatis. Morbi ut nibh in nisi feugiat maximus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+        </div>
+
+        <input type="checkbox" name="relationships" id="relationship5">
+        <label for="relationship5">
+            <img src="https://2img.net/u/2516/53/23/72/avatars/1734-44.jpg">
+        </label>
+        <div class="relationship-content">
+            <h1>Illia Aethelhelm</h1>
+            <span>sujet(s) en commun</span> : / <br>
+            <span>pkmn(s) connu(s)</span> : / <br>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sed felis et ante sodales bibendum vitae sed mi. In nisl risus, dictum quis luctus id, tincidunt vitae metus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam et augue lacus. In ac blandit metus, ut scelerisque felis. Vivamus porta venenatis finibus. Duis pretium sem eget mi hendrerit facilisis. Quisque elementum leo vel nibh consequat venenatis. Morbi ut nibh in nisi feugiat maximus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+        </div>
+
+        <input type="checkbox" name="relationships" id="relationship6">
+        <label for="relationship6">
+            <img src="https://signavatar.com/79272_v.png">
+        </label>
+        <div class="relationship-content">
+            <h1>Soo-ah Kim</h1>
+            <span>sujet(s) en commun</span> : / <br>
+            <span>pkmn(s) connu(s)</span> : / <br>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sed felis et ante sodales bibendum vitae sed mi. In nisl risus, dictum quis luctus id, tincidunt vitae metus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam et augue lacus. In ac blandit metus, ut scelerisque felis. Vivamus porta venenatis finibus. Duis pretium sem eget mi hendrerit facilisis. Quisque elementum leo vel nibh consequat venenatis. Morbi ut nibh in nisi feugiat maximus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+        </div>
+    </div>
+</div>
