@@ -20,6 +20,13 @@
         font-family: "Roboto", sans-serif;
     }
 
+    .credits {
+        width: 580px;
+        text-align: center;
+        margin: 0 auto;
+        font-size: 0.7rem;
+    }
+
     .bi-pause-circle {
         color: grey;
     }
@@ -44,11 +51,13 @@
         display: block;
     }
 
-    input[type="checkbox"]:checked ~ .pokemon-content {
+    input[type="checkbox"]:checked ~ .pokemon-content,
+    input[type="checkbox"]:checked ~ .inventory-content,
+    input[type="checkbox"]:checked ~ .tcard-content {
         display: block;
     }
 
-    .history-list, .pokemon-content, .relationship-content {
+    .history-list, .pokemon-content, .relationship-content, .inventory-content, .tcard-content {
         display: none;
     }
 
@@ -63,7 +72,7 @@
         cursor: pointer;
         text-align: center;
         display: block;
-        font-size: 1.2em;
+        font-size: 1.2rem;
         border: 1px solid var(--main-color);
         background-color: var(--secondary-color);
         padding: 5px 0;
@@ -148,7 +157,7 @@
     }
 
     .pokemon-content .stats, .pokemon-content .attack {
-        font-size: 0.7em;
+        font-size: 0.7rem;
     }
 
     .pokemon-content div:first-child div:first-child .sprite {
@@ -159,7 +168,7 @@
 
     .pokemon-additional {
         padding: 10px;
-        font-size: 0.8em;
+        font-size: 0.8rem;
     }
 
     .draco .attacks {
@@ -168,7 +177,7 @@
     }
 
     .draco .attack {
-        font-size: 0.6em;
+        font-size: 0.6rem;
     }
 
     .draco .pokemon-additional {
@@ -220,11 +229,120 @@
         font-style: normal;
         margin: 0;
         color: var(--main-color);
-        font-size: 1.2em;
+        font-size: 1.2rem;
     }
 
     .relationship-content span {
         color: var(--main-color);
+    }
+
+    h2 {
+        font-family: "Bebas Neue", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        margin: 0 0 5px 15px;
+        color: var(--main-color);
+    }
+
+    .informations {
+        background: #ffffff;
+        border: 1px solid var(--main-color);
+    }
+
+    .informations h2,
+    .informations div {
+        margin-left: 15px;
+    }
+
+    .informations h1 {
+        font-family: "Bebas Neue", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        margin: 0;
+        color: var(--main-color);
+        text-align: center;
+    }
+
+    .informations .top {
+        display: flex;
+        margin-bottom: 20px;
+    }
+
+    .informations .info, .cs {
+        margin-bottom: 20px;
+    }
+
+    .informations .top span {
+        background:var(--secondary-color);
+        padding: 2px;
+        margin: 5px;
+        border: 1px solid var(--main-color);
+    }
+
+    .informations .top .span-content {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        color: var(--main-color);
+        margin: 0;
+    }
+
+    .informations .top div {
+        text-align: center;
+    }
+
+    .informations .top label {
+        border: none;
+        background: none;
+        font-family: inherit;
+        font-weight: initial;
+        color: var(--main-color);
+        font-size: 1rem;
+    }
+
+    .tcard-content {
+        margin: 0 auto;
+    }
+
+    .inventories {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        margin: 0 0 20px 0 !important;
+    }
+
+    .informations .top img:first-child {
+        min-height: 150px;
+        max-height: 150px;
+        min-width: 150px;
+        max-width: 150px;
+        object-fit: none;
+        border: 1px solid var(--main-color);
+    }
+
+    .inventory {
+        width: 120px;
+        margin: 0 !important;
+    }
+
+    .inventory-content {
+        font-size: 0.8rem;
+        margin: 0 0 10px 15px !important;
+    }
+
+    .inventory label {
+        background: none;
+        border: none;
+    }
+
+    .money {
+        grid-column: 1 / -1;
+        text-align: center;
+    }
+
+    .cs {
+        font-size: 0.7rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
     }
 
 </style>
@@ -256,6 +374,7 @@
 
     <i class="bi bi-pause-circle"></i> En pause - <i class="bi bi-check-circle"></i> Fini - <i class="bi bi-play-circle"></i> En cours - <i class="bi bi-x-circle"></i> Abandonné
 </div>
+<div class="credits">© Design par Leonis</div>
 
 <hr>
 
@@ -484,6 +603,7 @@
         </div>
     </div>
 </div>
+<div class="credits">© Design par Leonis</div>
 
 <hr>
 
@@ -556,5 +676,172 @@
         </div>
     </div>
 </div>
+<div class="credits">© Design par Leonis</div>
 
 <hr>
+
+<div class="card informations">
+    <h1>Ajora CALDWELL</h1>
+    <div class="top">
+        <img src="https://i.imgur.com/glWnLiW.png" alt="">
+        <div>
+            <div class="span-content">
+                <span>INFO 1</span> <span>INFO 2</span> <span>INFO 3</span>
+                <span>INFO 4</span> <span>INFO 5</span> <span>INFO 6</span>
+                <span>INFO 7</span> <span>INFO 8</span> <span>INFO 9</span>
+                <span>INFO 10</span> <span>INFO 11</span> <span>INFO 12</span>
+            </div>
+            <a href="#">NDM</a> • <a href="#">Prez</a>
+            <br>
+            <label for="tcard">Tcard</label>
+            <input type="checkbox" name="tcard" id="tcard">
+            <img class="tcard-content" src="https://i.servimg.com/u/f77/20/21/33/91/ajora10.png" alt="">
+        </div>
+    </div>
+    <h2>Informations</h2>
+    <div class="info">
+        Je m’appelle Ajora Caldwell et je suis âgé de 35 ans. DRESSEUSE, je parcours présentement les routes de la région de Johto. Mon starter est une Héricendre et elle se nomme Chantico. Ensemble, nous allons rédiger les meilleurs carnets de route et d'exploration de la région. J’ai actuellement 0 BADGES.
+    </div>
+    <h2>Inventaire</h2>
+    <div class="inventories">
+        <div class="inventory">
+            <label for="capture"><img src="https://i.imgur.com/AGyntbz.png"> Capture</label>
+            <input type="checkbox" name="inventory" id="capture">
+            <div class="inventory-content">
+                x4 Pokéballs <br>
+                x4 Superballs<br>
+                x1 Hyperball<br>
+                x2 Bis Balls<br>
+                x1 Filet Ball<br>
+                x1 Masse Ball<br>
+            </div>
+        </div>
+
+        <div class="inventory">
+            <label for="soin"><img src="https://i.imgur.com/Gc335nS.png" alt=""> Soin</label>
+            <input type="checkbox" name="inventory" id="soin">
+            <div class="inventory-content">
+                x6 Potions<br>
+                x2 Super Potions<br>
+                x3 Hyper Potions<br>
+                x2 Potions Max<br>
+                x1 Lait Meumeu<br>
+                x3 Sodas Cool<br>
+                <br>
+                x5 Total Soins<br>
+                x1 Guérison<br>
+                <br>
+                x2 Rappels<br>
+                x1 Rappel Max<br>
+            </div>
+        </div>
+
+        <div class="inventory">
+            <label for="pierres"><img src="https://i.imgur.com/th6B6SJ.png" alt="">Pierres</label>
+            <input type="checkbox" name="inventory" id="pierres">
+            <div class="inventory-content">
+                Vide :(
+            </div>
+        </div>
+
+        <div class="inventory">
+            <label for="vitamines"><img src="https://i.imgur.com/qD3GHQB.png" alt="">Vitamines</label>
+            <input type="checkbox" name="inventory" id="vitamines">
+            <div class="inventory-content">
+                Vide =(
+            </div>
+        </div>
+
+        <div class="inventory">
+            <label for="flutes"><img src="https://i.imgur.com/Ai4pNsy.png" alt="">Flûtes & Cannes</label>
+            <input type="checkbox" name="inventory" id="flutes">
+            <div class="inventory-content">
+                x1 Pokéflûte Noire (19.4.25) (1x/m) <br>
+                x1 Pokéflûte Violette (8.5.25) (1x/m)<br>
+                x1 Pokéflûte Rouge (1x/topic)<br>
+                x1 Pokéflûte Bleue<br>
+                x1 Pokéflûte<br>
+
+                x1 Super Canne<br>
+                x1 Méga-Canne<br>
+            </div>
+        </div>
+
+        <div class="inventory">
+            <label for="cs"><img src="https://i.servimg.com/u/f56/11/44/54/89/normal10.png" alt="">CT/CS</label>
+            <input type="checkbox" name="inventory" id="cs">
+            <div class="inventory-content">
+                x1 CS Vol <br>
+                x1 CS Surf<br>
+                x1 CS Anti-Brume<br>
+                x1 CS Coupe<br>
+                x1 CS Éclate-Roc<br>
+                <br>
+                x1 CT Force cachée<br>
+                x1 CT Draco-Souffle<br>
+                x1 CT Tricherie<br>
+                x1 CT Canicule<br>
+                x1 CT Synchropeine<br>
+                x1 CT Blizzard<br>
+                x1 CT Séisme<br>
+                x1 CT Demi-Tour<br>
+                x1 CT Hâte<br>
+                x1 CT Change-Éclair<br>
+                x1 CT Ball'Ombre<br>
+            </div>
+        </div>
+
+        <div class="inventory">
+            <label for="rare"><img src="https://i.servimg.com/u/f10/11/44/54/89/chef10.png" alt="">Rares</label>
+            <input type="checkbox" name="inventory" id="rare">
+            <div class="inventory-content">
+                x2 Pomme d'Or<br>
+                x4 Miel<br>
+                x2 Superbonbons<br>
+                x2 Gelée Rouge<br>
+                x1 Pokébloc Violet<br>
+                x1 Appât Fade<br>
+                x1 Appât Rustique<br>
+                x2 Appâts Sophistiqués<br>
+                x3 Appâts 5 Étoiles<br>
+                <br>
+                x1 Pass Almia (❁)<br>
+            </div>
+        </div>
+
+        <div class="inventory">
+            <label for="baies"><img src="https://i.imgur.com/88X7BV9.png" alt="">Baies</label>
+            <input type="checkbox" name="inventory" id="baies">
+            <div class="inventory-content">
+                x1 Baie Fraive (C)<br>
+                x4 Baie Oran (C)<br>
+                x2 Baie Prine (C)<br>
+                x3 Baie Ceriz (C)<br>
+                x1 Baie Willia (C)<br>
+                x2 Baie Maron (C)<br>
+                x3 Baie Sitrus (PR)<br>
+                x2 Baie Prine (PR)<br>
+                x1 Baie Tronci (R)<br>
+                x1 Baie Mangou (R)<br>
+                x1 Baie Rabuta (R)<br>
+                x1 Baie Kiwan (R)<br>
+                x1 Baie Micle (TR)<br>
+            </div>
+        </div>
+
+        <div class="money">Argent en date du 9 novembre 2024 : 6300pk$</div>
+    </div>
+    <h2>Utilisations CS / Flûtes</h2>
+    <div class="cs">
+        <span>Coupe (Disponible - 1X/semaine) • 23.05.25</span>
+        <span>Vol (Disponible - 1X/trimestre) • x.x.xxxx </span>
+        <span>Force (Indisponible) • x.x.xxxx</span>
+        <span>Anti-Brume (Disponible - 1x/mois) • 12.05.25</span>
+        <span>Éclate-Roc (Disponible - 1x/mois) • 26.04.25</span>
+        <span>Cascade (Indisponible) • x.x.xxxx</span>
+        <span>Pokéflûte Noire (Disponible - 1x/mois) • x.x.xxxx</span>
+        <span>Pokéflûte Violette (Disponible - 1x/mois) • x.x.xxxx</span>
+    </div>
+
+</div>
+<div class="credits">© Inspiration Saya</div>
