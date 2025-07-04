@@ -52,12 +52,21 @@
     }
 
     input[type="checkbox"]:checked ~ .pokemon-content,
-    input[type="checkbox"]:checked ~ .inventory-content,
-    input[type="checkbox"]:checked ~ .tcard-content {
+    input[type="checkbox"]:checked ~ .inventory-content {
         display: block;
     }
 
-    .history-list, .pokemon-content, .relationship-content, .inventory-content, .tcard-content {
+    input[id="tcard"]:checked ~ .tcard-content,
+    input[id="tcard-rank"]:checked ~ .tcard-rank-content {
+        display: inline;
+    }
+
+    .history-list,
+    .pokemon-content,
+    .relationship-content,
+    .inventory-content,
+    .tcard-content,
+    .tcard-rank-content {
         display: none;
     }
 
@@ -110,12 +119,13 @@
     }
 
     .pokemon label {
-        max-height: 20px;
+        max-height: 25px;
         font-family: "Bebas Neue", sans-serif;
+        padding: 2px 0;
     }
 
     .pokemon label img {
-        max-height: 20px;
+        max-height: 25px;
         width: fit-content;
         object-fit: none;
     }
@@ -265,11 +275,11 @@
 
     .informations .top {
         display: flex;
-        margin-bottom: 20px;
     }
 
-    .informations .info, .cs {
+    .cs {
         margin-bottom: 20px;
+        line-height: 1.1rem;
     }
 
     .informations .top span {
@@ -277,14 +287,6 @@
         padding: 2px;
         margin: 5px;
         border: 1px solid var(--main-color);
-    }
-
-    .informations .top .span-content {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        color: var(--main-color);
-        margin: 0;
     }
 
     .informations .top div {
@@ -300,7 +302,7 @@
         font-size: 1rem;
     }
 
-    .tcard-content {
+    .tcard-content, .tcard-rank-content {
         margin: 0 auto;
     }
 
@@ -319,6 +321,17 @@
         border: 1px solid var(--main-color);
     }
 
+    .informations .info {
+        max-height: 150px;
+        height: 150px;
+        overflow-y: auto;
+        overflow-x: hidden;
+        margin-right: 15px;
+        scrollbar-color: var(--main-color) var(--secondary-color);
+        scrollbar-width: thin;
+        padding: 5px;
+    }
+
     .inventory {
         width: 120px;
         margin: 0 !important;
@@ -327,6 +340,7 @@
     .inventory-content {
         font-size: 0.8rem;
         margin: 0 0 10px 15px !important;
+        line-height: 1.1rem;
     }
 
     .inventory label {
@@ -345,6 +359,24 @@
         grid-template-columns: 1fr 1fr;
     }
 
+    .links {
+        text-align: center;
+    }
+
+    .links label{
+        text-align: center;
+        display: initial;
+        font-size: initial;
+        border: none;
+        font-family: inherit;
+        background: inherit;
+        color: var(--main-color);
+    }
+
+    .informations input[type="checkbox"]:checked + label {
+        border: none;
+    }
+
 </style>
 
 <meta charset="UTF-8">
@@ -353,10 +385,10 @@
         <label for="history2024">2024</label>
         <input type="checkbox" name="histories" id="history2024">
         <div class="history-list">
-            <i class="bi bi-pause-circle"></i> Hors Série #1 — Floralis Legenda ☞ Événement de Printemps (2024) — solo — <a href="">www</a> <i class="bi bi-backpack"></i> <br>
-            <i class="bi bi-check-circle"></i> Préface — Exploratrix Nativitas — solo — <a href="">www</a> <i class="bi bi-hammer"></i><br>
-            <i class="bi bi-play-circle"></i> Hors Série #2 — Quid Pro Quo — ft. Camille Mistouflet — <a href="">www</a> <i class="bi bi-tree"></i><br>
-            <i class="bi bi-x-circle"></i> Chapitre 1 — Litus Exploratio et Feriae et Reditio — solo — <a href="">www</a> <i class="bi bi-cake"></i><br>
+            <i class="bi bi-pause-circle"></i> <i class="bi bi-backpack"></i> Hors Série #1 — Floralis Legenda ☞ Événement de Printemps (2024) — solo — <a href="">www</a><br>
+            <i class="bi bi-check-circle"></i> <i class="bi bi-hammer"></i> Préface — Exploratrix Nativitas — solo — <a href="">www</a> <br>
+            <i class="bi bi-play-circle"></i> <i class="bi bi-tree"></i> Hors Série #2 — Quid Pro Quo — ft. Camille Mistouflet — <a href="">www</a> <br>
+            <i class="bi bi-x-circle"></i> <i class="bi bi-cake"></i> Chapitre 1 — Litus Exploratio et Feriae et Reditio — solo — <a href="">www</a> <br>
         </div>
     </div>
 
@@ -364,11 +396,11 @@
         <label for="history2025">2025</label>
         <input type="checkbox" name="histories" id="history2025">
         <div class="history-list">
-            <i class="bi bi-pause-circle"></i> Hors Série #1 — Floralis Legenda ☞ Événement de Printemps (2024) — solo — <a href="">www</a> <i class="bi bi-cart"></i> <br>
-            <i class="bi bi-check-circle"></i> Préface — Exploratrix Nativitas — solo — <a href="">www</a> <i class="bi bi-credit-card"></i><br>
-            <i class="bi bi-play-circle"></i> Hors Série #2 — Quid Pro Quo — ft. Camille Mistouflet — <a href="">www</a> <i class="bi bi-feather"></i><br>
-            <i class="bi bi-x-circle"></i> Chapitre 1 — Litus Exploratio et Feriae et Reditio — solo — <a href="">www</a> <i class="bi bi-rocket-takeoff"></i><br>
-            <i class="bi bi-x-circle"></i> Chapitre X — XXXXX — solo — <a href="">www</a> <i class="bi bi-shield"></i><br>
+            <i class="bi bi-pause-circle"></i> <i class="bi bi-cart"></i> Hors Série #1 — Floralis Legenda ☞ Événement de Printemps (2024) — solo — <a href="">www</a> <br>
+            <i class="bi bi-check-circle"></i> <i class="bi bi-credit-card"></i> Préface — Exploratrix Nativitas — solo — <a href="">www</a> <br>
+            <i class="bi bi-play-circle"></i> <i class="bi bi-feather"></i> Hors Série #2 — Quid Pro Quo — ft. Camille Mistouflet — <a href="">www</a> <br>
+            <i class="bi bi-x-circle"></i> <i class="bi bi-rocket-takeoff"></i> Chapitre 1 — Litus Exploratio et Feriae et Reditio — solo — <a href="">www</a> <br>
+            <i class="bi bi-x-circle"></i> <i class="bi bi-shield"></i> Chapitre X — XXXXX — solo — <a href="">www</a><br>
         </div>
     </div>
 
@@ -684,24 +716,27 @@
     <h1>Ajora CALDWELL</h1>
     <div class="top">
         <img src="https://i.imgur.com/glWnLiW.png" alt="">
-        <div>
-            <div class="span-content">
-                <span>INFO 1</span> <span>INFO 2</span> <span>INFO 3</span>
-                <span>INFO 4</span> <span>INFO 5</span> <span>INFO 6</span>
-                <span>INFO 7</span> <span>INFO 8</span> <span>INFO 9</span>
-                <span>INFO 10</span> <span>INFO 11</span> <span>INFO 12</span>
-            </div>
-            <a href="#">NDM</a> • <a href="#">Prez</a>
-            <br>
-            <label for="tcard">Tcard</label>
-            <input type="checkbox" name="tcard" id="tcard">
-            <img class="tcard-content" src="https://i.servimg.com/u/f77/20/21/33/91/ajora10.png" alt="">
+        <div class="info">
+            Je m’appelle Ajora Caldwell et je suis âgé de 35 ans. DRESSEUSE, je parcours présentement les routes de la région de Johto. Mon starter est une Héricendre et elle se nomme Chantico. Ensemble, nous allons rédiger les meilleurs carnets de route et d'exploration de la région. J’ai actuellement 0 BADGES.
         </div>
     </div>
-    <h2>Informations</h2>
-    <div class="info">
-        Je m’appelle Ajora Caldwell et je suis âgé de 35 ans. DRESSEUSE, je parcours présentement les routes de la région de Johto. Mon starter est une Héricendre et elle se nomme Chantico. Ensemble, nous allons rédiger les meilleurs carnets de route et d'exploration de la région. J’ai actuellement 0 BADGES.
+
+    <div class="links">
+        <a href="#" title="NDM"><i class="bi bi-list-ol"></i></a>
+        •
+        <a href="#" title="Prez"><i class="bi bi-person-lines-fill"></i></a>
+        •
+        <label for="tcard" title="TCARD"><i class="bi bi-card-list"></i></label>
+        <input type="checkbox" name="tcard" id="tcard">
+        •
+        <label for="tcard-rank" title="TCARD ELEVEUR"><i class="bi bi-egg-fill"></i></label>
+        <input type="checkbox" name="tcard" id="tcard-rank">
+
+        <br>
+        <img class="tcard-content" src="https://i.servimg.com/u/f77/20/21/33/91/ajora10.png" alt="">
+        <img class="tcard-rank-content" src="https://i.imgur.com/9KBdbXK.png" alt="">
     </div>
+
     <h2>Inventaire</h2>
     <div class="inventories">
         <div class="inventory">
