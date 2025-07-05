@@ -3,21 +3,24 @@
     @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
     @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
-    body {
-        background-color: #f1f1f1;
-    }
-
     :root {
         --main-color: #8e9a4c;
         --secondary-color: #fdfde8;
+        --tertiary-color: #6a6a00;
         --font-color-light: white;
         --font-color-dark: black;
+        --title-font: "Bebas Neue";
+        --global-font: "Roboto";
+    }
+
+    body {
+        background-color: #f1f1f1;
     }
 
     .card {
         margin: 0 auto;
         width: 580px;
-        font-family: "Roboto", sans-serif;
+        font-family: var(--global-font), sans-serif;
     }
 
     .credits {
@@ -43,24 +46,7 @@
         color: red;
     }
 
-    input[type="checkbox"] {
-        display: none;
-    }
-
-    input[type="checkbox"]:checked ~ .history-list {
-        display: block;
-    }
-
-    input[type="checkbox"]:checked ~ .pokemon-content,
-    input[type="checkbox"]:checked ~ .inventory-content {
-        display: block;
-    }
-
-    input[id="tcard"]:checked ~ .tcard-content,
-    input[id="tcard-rank"]:checked ~ .tcard-rank-content {
-        display: inline;
-    }
-
+    input[type="checkbox"],
     .history-list,
     .pokemon-content,
     .relationship-content,
@@ -68,6 +54,17 @@
     .tcard-content,
     .tcard-rank-content {
         display: none;
+    }
+
+    input[type="checkbox"]:checked ~ .pokemon-content,
+    input[type="checkbox"]:checked ~ .inventory-content,
+    input[type="checkbox"]:checked ~ .history-list {
+        display: block;
+    }
+
+    input[id="tcard"]:checked ~ .tcard-content,
+    input[id="tcard-rank"]:checked ~ .tcard-rank-content {
+        display: inline;
     }
 
     .history {
@@ -85,7 +82,7 @@
         border: 1px solid var(--main-color);
         background-color: var(--secondary-color);
         padding: 5px 0;
-        font-family: "Bebas Neue", sans-serif;
+        font-family: var(--title-font), sans-serif;
     }
 
     .history-list {
@@ -100,7 +97,7 @@
     }
 
     a:hover {
-        color: blue;
+        color: var(--tertiary-color);
     }
 
     .pokemon-card {
@@ -115,12 +112,11 @@
     }
 
     .pokemon-content .pokemon-name {
-        font-family: "Bebas Neue", sans-serif;
+        font-family: var(--title-font), sans-serif;
     }
 
     .pokemon label {
         max-height: 25px;
-        font-family: "Bebas Neue", sans-serif;
         padding: 2px 0;
     }
 
@@ -151,14 +147,11 @@
         flex-direction: row;
     }
 
-    .pokemon-content hr {
-        width: 75%;
-    }
-
     .pokemon-content .attack {
         display: flex;
         flex-direction: column;
         padding: 10px;
+        font-size: 0.6rem;
     }
 
     .pokemon-content .attack span:nth-of-type(2n+1) {
@@ -166,7 +159,7 @@
         text-align: center;
     }
 
-    .pokemon-content .stats, .pokemon-content .attack {
+    .pokemon-content .stats {
         font-size: 0.7rem;
     }
 
@@ -176,31 +169,19 @@
         object-fit: none;
     }
 
-    .pokemon-additional {
-        padding: 10px;
-        font-size: 0.8rem;
-    }
-
-    .draco .attacks {
+    .pokemon-content .attacks {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
     }
 
-    .draco .attack {
-        font-size: 0.6rem;
-    }
-
-    .draco .pokemon-additional {
+    .pokemon-content .pokemon-additional {
         display: block;
+        padding: 10px;
+        font-size: 0.8rem;
     }
 
-    .types1 {
+    .type {
         max-width: 40px;
-        object-fit: contain !important;
-    }
-
-    .types2 {
-        max-width: 15px;
         object-fit: contain !important;
     }
 
@@ -233,8 +214,8 @@
         padding: 10px;
     }
 
-    .relationship-content h1 {
-        font-family: "Bebas Neue", sans-serif;
+    .card h1 {
+        font-family: var(--title-font), sans-serif;
         font-weight: 400;
         font-style: normal;
         margin: 0;
@@ -246,8 +227,8 @@
         color: var(--main-color);
     }
 
-    h2 {
-        font-family: "Bebas Neue", sans-serif;
+    .card h2 {
+        font-family: var(--title-font), sans-serif;
         font-weight: 400;
         font-style: normal;
         margin: 0 0 5px 15px;
@@ -265,12 +246,9 @@
     }
 
     .informations h1 {
-        font-family: "Bebas Neue", sans-serif;
-        font-weight: 400;
-        font-style: normal;
         margin: 0;
-        color: var(--main-color);
         text-align: center;
+        font-size: 2rem;
     }
 
     .informations .top {
@@ -327,7 +305,6 @@
         margin-right: 15px;
         scrollbar-color: var(--main-color) var(--secondary-color);
         scrollbar-width: thin;
-        padding: 5px;
         text-align: justify;
     }
 
@@ -432,143 +409,9 @@
 <meta charset="UTF-8">
 <div class="card pokemon-card">
     <div class="pokemon">
-        <label for="pok1" style="background: coral; border: 1px solid orangered;">
-            <img src="https://t.ly/h3vCk">
-            <span class="pokemon-name">CHANTICO</span>
-            <span>
-                <img class="types1" src="https://www.pokepedia.fr/images/thumb/f/fc/Miniature_Type_Feu_EB.png/70px-Miniature_Type_Feu_EB.png">
-                <img class="types1" src="https://www.pokepedia.fr/images/thumb/f/fc/Miniature_Type_Feu_EB.png/70px-Miniature_Type_Feu_EB.png">
-            </span>
-        </label>
-        <input type="checkbox" name="pokemon" id="pok1">
-        <div class="pokemon-content" style="background: #ff7f505e; border: 1px solid orangered;">
-            <div>
-                <div>
-                    <img class="sprite" src="https://t.ly/h3vCk">
-                    <span class="pokemon-name">CHANTICO</span><br>
-                    <span>
-                        <img class="types1" src="https://www.pokepedia.fr/images/thumb/f/fc/Miniature_Type_Feu_EB.png/70px-Miniature_Type_Feu_EB.png">
-                        <img class="types1" src="https://www.pokepedia.fr/images/thumb/f/fc/Miniature_Type_Feu_EB.png/70px-Miniature_Type_Feu_EB.png">
-                    </span>
-                </div>
-                <div style="" class="stats">
-                    <span>Points de Vie • 39 + 0 = 39</span>
-                    <span>Attaque • 52 + 0 = 52</span>
-                    <span>Défense • 43 + 0 = 43</span>
-                    <span>Attaque Spéciale • 60 + 0 = 60</span>
-                    <span>Défense Spéciale • 50 + 0 = 50</span>
-                    <span>Vitesse • 65 + 0 = 65</span>
-
-                    <span>Points d'Expérience • 8*35 = 280</span>
-                </div>
-            </div>
-            <div style="border-top: 2px solid orangered;">
-                <div class="attack">
-                    <span>
-                        <img class="types1" src="https://www.pokepedia.fr/images/thumb/2/2e/Miniature_Type_Normal_EB.png/70px-Miniature_Type_Normal_EB.png">
-                    </span>
-                    <span>
-                        Coupe (CS) <br>
-                        Charge<br>
-                        Groz'Yeux<br>
-                        Brouillard<br>
-                        Vivie-Attaque<br>
-                        Boul'Armure<br>
-                    </span>
-                    <hr style="border-color: orangered;">
-                    <span>
-                        <img class="types1" src="https://www.pokepedia.fr/images/thumb/f/fc/Miniature_Type_Feu_EB.png/70px-Miniature_Type_Feu_EB.png">
-                    </span>
-                    <span>
-                        Flammèche<br>
-                        Roue de Feu<br>
-                        Nitrocharge<br>
-                        Ébullilave<br>
-                        Lance-Flammes<br>
-                    </span>
-                </div>
-                <div class="pokemon-additional">
-                    INFO BLABLABLA + informations INFO BLABLABLA + informations INFO BLABLABLA
-                    + informations INFO BLABLABLA + informations INFO BLABLABLA + informations
-                    INFO BLABLABLA + informations INFO BLABLABLA + informations INFO BLABLABLA +
-                    informations INFO BLABLABLA + informations INFO BLABLABLA + informations
-                </div>
-            </div>
-
-        </div>
-    </div>
-
-    <div class="pokemon">
-        <label for="pok2" style="background: #c1b3b3; border: 1px solid #515151;">
-            <img src="https://img.pokemondb.net/sprites/black-white/normal/escavalier.png">
-            <span class="pokemon-name">LANCELOT</span>
-            <span>
-                <img class="types2" src="https://www.pokepedia.fr/images/thumb/f/f8/Ic%C3%B4ne_Type_Insecte_EB.png/30px-Ic%C3%B4ne_Type_Insecte_EB.png">
-                <img class="types2" src="https://www.pokepedia.fr/images/thumb/7/7e/Ic%C3%B4ne_Type_Acier_EB.png/30px-Ic%C3%B4ne_Type_Acier_EB.png">
-            </span>
-        </label>
-        <input type="checkbox" name="pokemon" id="pok2">
-        <div class="pokemon-content" style="background: rgba(198,198,198,0.34); border: 1px solid #515151;">
-            <div>
-                <div style="border-right: 1px solid #515151;">
-                    <img class="sprite" src="https://img.pokemondb.net/sprites/black-white/normal/escavalier.png">
-                    <span class="pokemon-name">LANCELOT</span><br>
-                    <span>
-                        <img class="types2" src="https://www.pokepedia.fr/images/thumb/f/f8/Ic%C3%B4ne_Type_Insecte_EB.png/30px-Ic%C3%B4ne_Type_Insecte_EB.png">
-                        <img class="types2" src="https://www.pokepedia.fr/images/thumb/7/7e/Ic%C3%B4ne_Type_Acier_EB.png/30px-Ic%C3%B4ne_Type_Acier_EB.png">
-                    </span>
-                </div>
-                <div style="" class="stats">
-                    <span>Points de Vie • 39 + 0 = 39</span>
-                    <span>Attaque • 52 + 0 = 52</span>
-                    <span>Défense • 43 + 0 = 43</span>
-                    <span>Attaque Spéciale • 60 + 0 = 60</span>
-                    <span>Défense Spéciale • 50 + 0 = 50</span>
-                    <span>Vitesse • 65 + 0 = 65</span>
-
-                    <span>Points d'Expérience • 8*35 = 280</span>
-                </div>
-            </div>
-            <div style="border-top: 1px solid #515151;">
-                <div class="attack" style="border-right: 1px solid #515151;">
-                    <span>
-                        <img class="types2" src="https://www.pokepedia.fr/images/thumb/f/f8/Ic%C3%B4ne_Type_Insecte_EB.png/30px-Ic%C3%B4ne_Type_Insecte_EB.png">
-                    </span>
-                    <span>
-                        Coupe (CS) <br>
-                        Charge<br>
-                        Groz'Yeux<br>
-                        Brouillard<br>
-                        Vivie-Attaque<br>
-                        Boul'Armure<br>
-                    </span>
-                    <hr style="border-color: #515151;">
-                    <span>
-                        <img class="types2" src="https://www.pokepedia.fr/images/thumb/7/7e/Ic%C3%B4ne_Type_Acier_EB.png/30px-Ic%C3%B4ne_Type_Acier_EB.png">
-                    </span>
-                    <span>
-                        Flammèche<br>
-                        Roue de Feu<br>
-                        Nitrocharge<br>
-                        Ébullilave<br>
-                        Lance-Flammes<br>
-                    </span>
-                </div>
-                <div class="pokemon-additional">
-                    INFO BLABLABLA + informations INFO BLABLABLA + informations INFO BLABLABLA
-                    + informations INFO BLABLABLA + informations INFO BLABLABLA + informations
-                    INFO BLABLABLA + informations INFO BLABLABLA + informations INFO BLABLABLA +
-                    informations INFO BLABLABLA + informations INFO BLABLABLA + informations
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="pokemon draco">
         <label for="pok3" style="background: url('https://www.gamosaurus.com/wp-content/uploads/Pokemon/Vignettes/pokemon-fiche-pokedex.jpg');">
             <img src="https://www.pokepedia.fr/images/c/c9/Sprite_0148_RS.png" style="object-position: 0 -16px;">
             <span class="pokemon-name">DRACO</span>
-            <span><img class="types1" src="https://www.pokepedia.fr/images/thumb/2/23/Miniature_Type_Dragon_EB.png/70px-Miniature_Type_Dragon_EB.png"></span>
         </label>
         <input type="checkbox" name="pokemon" id="pok3">
         <div class="pokemon-content" style="background: rgba(2,218,225,0.47); border: 1px solid #0051ff;">
@@ -577,7 +420,7 @@
                     <img class="sprite" src="https://www.pokepedia.fr/images/c/c9/Sprite_0148_RS.png">
                     <span class="pokemon-name">DRACO</span><br>
                     <span>
-                        <img class="types1"  src="https://www.pokepedia.fr/images/thumb/2/23/Miniature_Type_Dragon_EB.png/70px-Miniature_Type_Dragon_EB.png">
+                        <img class="type" src="https://www.pokepedia.fr/images/thumb/2/23/Miniature_Type_Dragon_EB.png/70px-Miniature_Type_Dragon_EB.png">
                     </span>
                 </div>
                 <div style="" class="stats">
@@ -594,7 +437,7 @@
             <div style="border-top: 2px solid #0051ff;border-bottom: 2px solid #0051ff;" class="attacks">
                 <div class="attack">
                     <span>
-                        <img class="types1" src="https://www.pokepedia.fr/images/thumb/2/2e/Miniature_Type_Normal_EB.png/70px-Miniature_Type_Normal_EB.png">
+                        <img class="type" src="https://www.pokepedia.fr/images/thumb/2/2e/Miniature_Type_Normal_EB.png/70px-Miniature_Type_Normal_EB.png">
                     </span>
                     <span>
                         Coupe (CS) <br>
@@ -608,7 +451,7 @@
                 </div>
                 <div class="attack">
                     <span>
-                        <img class="types1" src="https://www.pokepedia.fr/images/thumb/2/2e/Miniature_Type_Normal_EB.png/70px-Miniature_Type_Normal_EB.png">
+                        <img class="type" src="https://www.pokepedia.fr/images/thumb/2/2e/Miniature_Type_Normal_EB.png/70px-Miniature_Type_Normal_EB.png">
                     </span>
                     <span>
                         Coupe (CS) <br>
@@ -621,7 +464,7 @@
                 </div>
                 <div class="attack">
                     <span>
-                        <img class="types1" src="https://www.pokepedia.fr/images/thumb/2/2e/Miniature_Type_Normal_EB.png/70px-Miniature_Type_Normal_EB.png">
+                        <img class="type" src="https://www.pokepedia.fr/images/thumb/2/2e/Miniature_Type_Normal_EB.png/70px-Miniature_Type_Normal_EB.png">
                     </span>
                     <span>
                         Coupe (CS) <br>
@@ -634,7 +477,7 @@
                 </div>
                 <div class="attack">
                     <span>
-                        <img class="types1" src="https://www.pokepedia.fr/images/thumb/f/fc/Miniature_Type_Feu_EB.png/70px-Miniature_Type_Feu_EB.png">
+                        <img class="type" src="https://www.pokepedia.fr/images/thumb/f/fc/Miniature_Type_Feu_EB.png/70px-Miniature_Type_Feu_EB.png">
                     </span>
                     <span>
                         Flammèche<br>
