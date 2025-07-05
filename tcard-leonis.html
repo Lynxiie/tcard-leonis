@@ -289,10 +289,6 @@
         border: 1px solid var(--main-color);
     }
 
-    .informations .top div {
-        text-align: center;
-    }
-
     .informations .top label {
         border: none;
         background: none;
@@ -309,7 +305,9 @@
     .inventories {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;
-        margin: 0 0 20px 0 !important;
+        background: var(--main-color);
+        gap: 1px;
+        margin-right: 15px;
     }
 
     .informations .top img:first-child {
@@ -330,11 +328,13 @@
         scrollbar-color: var(--main-color) var(--secondary-color);
         scrollbar-width: thin;
         padding: 5px;
+        text-align: justify;
     }
 
     .inventory {
-        width: 120px;
         margin: 0 !important;
+        background: white;
+        width: 100%;
     }
 
     .inventory-content {
@@ -349,17 +349,32 @@
     }
 
     .money {
-        grid-column: 1 / -1;
         text-align: center;
+        margin: 10px 0 15px 0;
     }
 
     .cs {
         font-size: 0.7rem;
         display: grid;
         grid-template-columns: 1fr 1fr;
+        margin-right: 15px;
+        background: #8e9a4c;
+        gap: 0 1px;
+    }
+
+    .cs span {
+        background: white;
+        padding-left: 5px;
     }
 
     .links {
+        text-align: center;
+        padding: 2px;
+        margin: 5px;
+        width: 150px;
+    }
+
+    .tcards {
         text-align: center;
     }
 
@@ -727,12 +742,13 @@
         <a href="#" title="Prez"><i class="bi bi-person-lines-fill"></i></a>
         •
         <label for="tcard" title="TCARD"><i class="bi bi-card-list"></i></label>
-        <input type="checkbox" name="tcard" id="tcard">
         •
         <label for="tcard-rank" title="TCARD ELEVEUR"><i class="bi bi-egg-fill"></i></label>
-        <input type="checkbox" name="tcard" id="tcard-rank">
+    </div>
 
-        <br>
+    <div class="tcards">
+        <input type="checkbox" name="tcard" id="tcard">
+        <input type="checkbox" name="tcard" id="tcard-rank">
         <img class="tcard-content" src="https://i.servimg.com/u/f77/20/21/33/91/ajora10.png" alt="">
         <img class="tcard-rank-content" src="https://i.imgur.com/9KBdbXK.png" alt="">
     </div>
@@ -864,8 +880,9 @@
             </div>
         </div>
 
-        <div class="money">Argent en date du 9 novembre 2024 : 6300pk$</div>
+
     </div>
+    <div class="money">Argent en date du 9 novembre 2024 : 6300pk$</div>
     <h2>Utilisations CS / Flûtes</h2>
     <div class="cs">
         <span>Coupe (Disponible - 1X/semaine) • 23.05.25</span>
