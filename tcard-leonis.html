@@ -4,30 +4,35 @@
     @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
     :root {
-        --main-color: #8e9a4c;
-        --secondary-color: #fdfde8;
-        --tertiary-color: #6a6a00;
-        --font-color-light: white;
-        --font-color-dark: black;
+        --main-color: #8e9a4c; /* MAINCOLOR */
+        --secondary-color: #fdfde8; /* SECCOLOR */
+        --tertiary-color: #6a6a00; /* TERCOLOR */
         --title-font: "Bebas Neue";
         --global-font: "Roboto";
-    }
-
-    body {
-        background-color: #f1f1f1;
+        --title-font-size: 2rem; /* TITLESIZE */
+        --cat-font-size: 1.2rem; /* CATSIZE */
+        --global-font-size: 0.9rem; /* GLOBSIZE */
+        --small-font-size: 0.7rem; /* SMALLSIZE */
+        --smaller-font-size: 0.6rem; /* SMALLERSIZE */
+        --global-line-height: 1.1rem; /* GLOBHEIGHT */
+        --cat-line-height: 1.4rem; /* CATHEIGHT */
+        --title-line-height: 2.2rem; /* TITLEHEIGHT */
+        --small-line-height: 0.9rem; /* SMALLHEIGHT */
     }
 
     .card {
         margin: 0 auto;
         width: 580px;
         font-family: var(--global-font), sans-serif;
+        font-size: var(--global-font-size);
+        line-height: var(--global-line-height);
     }
 
     .credits {
         width: 580px;
         text-align: center;
         margin: 0 auto;
-        font-size: 0.7rem;
+        font-size: var(--smaller-font-size);
     }
 
     .bi-pause-circle {
@@ -56,29 +61,30 @@
         display: none;
     }
 
-    input[type="checkbox"]:checked ~ .pokemon-content,
-    input[type="checkbox"]:checked ~ .inventory-content,
-    input[type="checkbox"]:checked ~ .history-list {
+    input[type="checkbox"]:checked~.pokemon-content,
+    input[type="checkbox"]:checked~.inventory-content,
+    input[type="checkbox"]:checked~.history-list {
         display: block;
     }
 
-    input[id="tcard"]:checked ~ .tcard-content,
-    input[id="tcard-rank"]:checked ~ .tcard-rank-content {
+    input[id="tcard"]:checked~.tcard-content,
+    input[id="tcard-rank"]:checked~.tcard-rank-content {
         display: inline;
     }
 
     .history {
-        background-color: white;
+        background-color: #fff;
         border: 1px solid var(--main-color);
         padding: 10px;
         margin-bottom: 10px;
     }
 
-    label {
+    .card label {
         cursor: pointer;
         text-align: center;
         display: block;
-        font-size: 1.2rem;
+        font-size: var(--cat-font-size);
+        line-height: var(--cat-line-height);
         border: 1px solid var(--main-color);
         background-color: var(--secondary-color);
         padding: 5px 0;
@@ -92,12 +98,17 @@
         padding: 5px;
     }
 
-    a, a:visited {
+    .history label {
         color: var(--main-color);
     }
 
-    a:hover {
-        color: var(--tertiary-color);
+    .card a:link,
+    .card a:visited {
+        color: var(--main-color) !important;
+    }
+
+    .card a:hover {
+        color: var(--tertiary-color) !important;
     }
 
     .pokemon-card {
@@ -130,7 +141,7 @@
         margin-top: 10px;
     }
 
-    .pokemon-content > div {
+    .pokemon-content>div {
         display: grid;
         grid-template-columns: 110px 1fr;
     }
@@ -151,7 +162,8 @@
         display: flex;
         flex-direction: column;
         padding: 10px;
-        font-size: 0.6rem;
+        font-size: var(--smaller-font-size);
+        line-height: var(--small-line-height);
     }
 
     .pokemon-content .attack span:nth-of-type(2n+1) {
@@ -160,7 +172,10 @@
     }
 
     .pokemon-content .stats {
-        font-size: 0.7rem;
+        font-size: var(--smaller-font-size);
+        line-height: var(--small-line-height);
+        border: none;
+        width: inherit;
     }
 
     .pokemon-content div:first-child div:first-child .sprite {
@@ -177,7 +192,8 @@
     .pokemon-content .pokemon-additional {
         display: block;
         padding: 10px;
-        font-size: 0.8rem;
+        font-size: var(--small-font-size);
+        line-height: var(--small-line-height);
     }
 
     .type {
@@ -192,18 +208,19 @@
         grid-auto-flow: dense;
     }
 
-    .relationships label, .relationships img {
+    .relationships label,
+    .relationships img {
         max-height: 320px;
         padding: 0;
         width: 105px;
         height: fit-content;
     }
 
-    input[type="checkbox"]:checked + label {
+    input[type="checkbox"]:checked+label {
         border: 3px solid var(--main-color);
     }
 
-    input[type="checkbox"]:checked + * +.relationship-content {
+    input[type="checkbox"]:checked+*+.relationship-content {
         display: block;
         grid-column: 1 / -1;
     }
@@ -220,11 +237,16 @@
         font-style: normal;
         margin: 0;
         color: var(--main-color);
-        font-size: 1.2rem;
+        font-size: var(--title-font-size);
+        line-height: var(--title-line-height);
     }
 
     .relationship-content span {
         color: var(--main-color);
+    }
+
+    .relationship-content h2 {
+        margin: 0 !important;
     }
 
     .card h2 {
@@ -233,10 +255,12 @@
         font-style: normal;
         margin: 0 0 5px 15px;
         color: var(--main-color);
+        font-size: var(--cat-font-size);
+        line-height: var(--cat-line-height);
     }
 
     .informations {
-        background: #ffffff;
+        background: var(--secondary-color);
         border: 1px solid var(--main-color);
     }
 
@@ -248,20 +272,14 @@
     .informations h1 {
         margin: 0;
         text-align: center;
-        font-size: 2rem;
     }
 
     .informations .top {
         display: flex;
     }
 
-    .cs {
-        margin-bottom: 20px;
-        line-height: 1.1rem;
-    }
-
     .informations .top span {
-        background:var(--secondary-color);
+        background: var(--secondary-color);
         padding: 2px;
         margin: 5px;
         border: 1px solid var(--main-color);
@@ -273,10 +291,12 @@
         font-family: inherit;
         font-weight: initial;
         color: var(--main-color);
-        font-size: 1rem;
+        font-size: var(--cat-font-size);
+        line-height: var(--cat-line-height);
     }
 
-    .tcard-content, .tcard-rank-content {
+    .tcard-content,
+    .tcard-rank-content {
         margin: 0 auto;
     }
 
@@ -297,7 +317,7 @@
         border: 1px solid var(--main-color);
     }
 
-    .informations .info {
+    .informations .inform {
         max-height: 150px;
         height: 150px;
         overflow-y: auto;
@@ -310,14 +330,14 @@
 
     .inventory {
         margin: 0 !important;
-        background: white;
+        background: var(--secondary-color);
         width: 100%;
     }
 
     .inventory-content {
-        font-size: 0.8rem;
+        font-size: var(--small-font-size);
         margin: 0 0 10px 15px !important;
-        line-height: 1.1rem;
+        line-height: var(--small-line-height);
     }
 
     .inventory label {
@@ -335,16 +355,18 @@
     }
 
     .cs {
-        font-size: 0.7rem;
+        font-size: var(--smaller-font-size);
         display: grid;
         grid-template-columns: 1fr 1fr;
         margin-right: 15px;
-        background: #8e9a4c;
+        background: var(--main-color);
         gap: 0 1px;
+        margin-bottom: 20px;
+        line-height: var(--small-line-height);
     }
 
     .cs span {
-        background: white;
+        background: var(--secondary-color);
         padding-left: 5px;
     }
 
@@ -359,7 +381,7 @@
         text-align: center;
     }
 
-    .links label{
+    .links label {
         text-align: center;
         display: initial;
         font-size: initial;
@@ -369,10 +391,13 @@
         color: var(--main-color);
     }
 
-    .informations input[type="checkbox"]:checked + label {
+    .informations input[type="checkbox"]:checked+label {
         border: none;
     }
 
+    .links label:hover {
+        color: var(--tertiary-color) !important;
+    }
 </style>
 
 <meta charset="UTF-8">
@@ -508,7 +533,7 @@
             <img src="https://i.servimg.com/u/f37/19/16/03/03/ia114.png">
         </label>
         <div class="relationship-content">
-            <h1>Caroline Mistouflet</h1>
+            <h2>Caroline Mistouflet</h2>
             <span>sujet(s) en commun</span> : Quid Pro Quo <br>
             <span>pkmn(s) connu(s)</span> : Evoli, Mystherbe S <br>
             Une rencontre totalement fortuite sur un fond d'imbroglio comique. L'une pense avoir affaire avec une éthologue expérimentée ; l'autre pense retrouver une collègue d'une organisation de l'ombre. La situation promet d'être comique et incroyablement lunaire, au fur et à mesure que le point de l'Evoli de Camille se déroule...
@@ -519,7 +544,7 @@
             <img src="https://i.servimg.com/u/f18/19/27/40/26/image157.png">
         </label>
         <div class="relationship-content">
-            <h1>Rurha DE VIL</h1>
+            <h2>Rurha DE VIL</h2>
             <span>sujet(s) en commun</span> : Le Festival des Trois Dragons. <br>
             <span>pkmn(s) connu(s)</span> : Starmobile S <br>
             Dresseur rencontré sur Célestia. Venu avec son équipe entièrement composé d'hommes, il semble faire partie d'une troupe partant à la recherche du folklore des quatre coins du globe, prêt à s'habiller et à se grimer en conséquence pour faire la meilleure des impressions. Cela dit, à première vue, Ajora pense qu'il est quand même un excentrique qu'il faut surveiller du coin de l'œil…
@@ -530,7 +555,7 @@
             <img src="https://i.imgur.com/R7IBBY0.png">
         </label>
         <div class="relationship-content">
-            <h1>Ariana Montoya</h1>
+            <h2>Ariana Montoya</h2>
             <span>sujet(s) en commun</span> : /  <br>
             <span>pkmn(s) connu(s)</span> : / <br>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sed felis et ante sodales bibendum vitae sed mi. In nisl risus, dictum quis luctus id, tincidunt vitae metus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam et augue lacus. In ac blandit metus, ut scelerisque felis. Vivamus porta venenatis finibus. Duis pretium sem eget mi hendrerit facilisis. Quisque elementum leo vel nibh consequat venenatis. Morbi ut nibh in nisi feugiat maximus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
@@ -541,7 +566,7 @@
             <img src="https://i.ibb.co/kVJLTQW6/Honokaprintemps-copie.png">
         </label>
         <div class="relationship-content">
-            <h1>Honoka Sakurame</h1>
+            <h2>Honoka Sakurame</h2>
             <span>sujet(s) en commun</span> : / <br>
             <span>pkmn(s) connu(s)</span> : / <br>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sed felis et ante sodales bibendum vitae sed mi. In nisl risus, dictum quis luctus id, tincidunt vitae metus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam et augue lacus. In ac blandit metus, ut scelerisque felis. Vivamus porta venenatis finibus. Duis pretium sem eget mi hendrerit facilisis. Quisque elementum leo vel nibh consequat venenatis. Morbi ut nibh in nisi feugiat maximus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
@@ -552,7 +577,7 @@
             <img src="https://2img.net/u/2516/53/23/72/avatars/1734-44.jpg">
         </label>
         <div class="relationship-content">
-            <h1>Illia Aethelhelm</h1>
+            <h2>Illia Aethelhelm</h2>
             <span>sujet(s) en commun</span> : / <br>
             <span>pkmn(s) connu(s)</span> : / <br>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sed felis et ante sodales bibendum vitae sed mi. In nisl risus, dictum quis luctus id, tincidunt vitae metus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam et augue lacus. In ac blandit metus, ut scelerisque felis. Vivamus porta venenatis finibus. Duis pretium sem eget mi hendrerit facilisis. Quisque elementum leo vel nibh consequat venenatis. Morbi ut nibh in nisi feugiat maximus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
@@ -563,7 +588,7 @@
             <img src="https://signavatar.com/79272_v.png">
         </label>
         <div class="relationship-content">
-            <h1>Soo-ah Kim</h1>
+            <h2>Soo-ah Kim</h2>
             <span>sujet(s) en commun</span> : / <br>
             <span>pkmn(s) connu(s)</span> : / <br>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sed felis et ante sodales bibendum vitae sed mi. In nisl risus, dictum quis luctus id, tincidunt vitae metus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam et augue lacus. In ac blandit metus, ut scelerisque felis. Vivamus porta venenatis finibus. Duis pretium sem eget mi hendrerit facilisis. Quisque elementum leo vel nibh consequat venenatis. Morbi ut nibh in nisi feugiat maximus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
@@ -578,7 +603,7 @@
     <h1>Ajora CALDWELL</h1>
     <div class="top">
         <img src="https://i.imgur.com/glWnLiW.png" alt="">
-        <div class="info">
+        <div class="inform">
             Je m’appelle Ajora Caldwell et je suis âgé de 35 ans. DRESSEUSE, je parcours présentement les routes de la région de Johto. Mon starter est une Héricendre et elle se nomme Chantico. Ensemble, nous allons rédiger les meilleurs carnets de route et d'exploration de la région. J’ai actuellement 0 BADGES.
         </div>
     </div>

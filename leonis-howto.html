@@ -1,0 +1,342 @@
+<meta charset="UTF-8">
+<style>@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css");.card{display: block!important;}img{max-width: 33%}pre{background: #eaeaea;margin-bottom: 5px!important;}.copy-btn{margin-bottom: 15px;}</style>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+
+
+<div class="container">
+    <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+        <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="pills-css-tab" data-bs-toggle="pill" data-bs-target="#pills-css" type="button" role="tab" aria-controls="pills-css" aria-selected="true">CSS</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="pills-info-tab" data-bs-toggle="pill" data-bs-target="#pills-info" type="button" role="tab" aria-controls="pills-info" aria-selected="false">Informations</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="pills-pokemon-tab" data-bs-toggle="pill" data-bs-target="#pills-pokemon" type="button" role="tab" aria-controls="pills-pokemon" aria-selected="false">Pokémon</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="pills-history-tab" data-bs-toggle="pill" data-bs-target="#pills-history" type="button" role="tab" aria-controls="pills-history" aria-selected="false">Historique</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="pills-people-tab" data-bs-toggle="pill" data-bs-target="#pills-people" type="button" role="tab" aria-controls="pills-people" aria-selected="false">Connaissance</button>
+        </li>
+    </ul>
+
+    <div class="tab-content" id="pills-tabContent">
+        <div class="tab-pane fade show active" id="pills-css" role="tabpanel" aria-labelledby="pills-css-tab" tabindex="0">
+            Le CSS, à mettre une fois en début de fichier (le premier post suffit) :
+            <pre>&lt;style&gt;@import url(https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css);@import url(https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap);@import url(https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap);:root{--main-color:MAINCOLOR;--secondary-color:SECCOLOR;--tertiary-color:TERCOLOR;--title-font:"Bebas Neue";--global-font:"Roboto";--title-font-size:TITLESIZE;--cat-font-size:CATSIZE;--global-font-size:GLOBSIZE;--small-font-size:SMALLSIZE;--smaller-font-size:SMALLERSIZE;--global-line-height:GLOBHEIGHT;--cat-line-height:CATHEIGHT;--title-line-height:TITLEHEIGHT;--small-line-height:SMALLHEIGHT}.card{margin:0 auto;width:580px;font-family:var(--global-font),sans-serif;font-size:var(--global-font-size);line-height:var(--global-line-height)}.credits{width:580px;text-align:center;margin:0 auto;font-size:var(--smaller-font-size)}.bi-pause-circle{color:grey}.bi-check-circle{color:green}.bi-play-circle{color:orange}.bi-x-circle{color:red}input[type="checkbox"],.history-list,.pokemon-content,.relationship-content,.inventory-content,.tcard-content,.tcard-rank-content{display:none}input[type="checkbox"]:checked~.pokemon-content,input[type="checkbox"]:checked~.inventory-content,input[type="checkbox"]:checked~.history-list{display:block}input[id="tcard"]:checked~.tcard-content,input[id="tcard-rank"]:checked~.tcard-rank-content{display:inline}.history{background-color:#fff;border:1px solid var(--main-color);padding:10px;margin-bottom:10px}.card label{cursor:pointer;text-align:center;display:block;font-size:var(--cat-font-size);line-height:var(--cat-line-height);border:1px solid var(--main-color);background-color:var(--secondary-color);padding:5px 0;font-family:var(--title-font),sans-serif}.history-list{margin-top:10px;border:1px solid var(--main-color);background-color:var(--secondary-color);padding:5px}.history label{color:var(--main-color)}.card a:link,.card a:visited{color:var(--main-color)!important}.card a:hover{color:var(--tertiary-color)!important}.pokemon-card{display:flex;flex-wrap:wrap;justify-content:space-between}.card .pokemon{width:49%;margin-bottom:10px}.pokemon-content .pokemon-name{font-family:var(--title-font),sans-serif}.pokemon label{max-height:25px;padding:2px 0}.pokemon label img{max-height:25px;width:fit-content;object-fit:none}.pokemon-content{margin-top:10px}.pokemon-content>div{display:grid;grid-template-columns:110px 1fr}.pokemon-content div:first-child div{display:flex;flex-wrap:wrap;flex-direction:column;align-items:center;padding:5px}.pokemon-content div:first-child div:nth-child(2){flex-direction:row}.pokemon-content .attack{display:flex;flex-direction:column;padding:10px;font-size:var(--smaller-font-size);line-height:var(--small-line-height)}.pokemon-content .attack span:nth-of-type(2n+1){width:100%;text-align:center}.pokemon-content .stats{font-size:var(--smaller-font-size);line-height:var(--small-line-height);border:none;width:inherit}.pokemon-content div:first-child div:first-child .sprite{width:96px;height:96px;object-fit:none}.pokemon-content .attacks{display:grid;grid-template-columns:1fr 1fr 1fr}.pokemon-content .pokemon-additional{display:block;padding:10px;font-size:var(--small-font-size);line-height:var(--small-line-height)}.type{max-width:40px;object-fit:contain!important}.relationships{display:grid;grid-template-columns:1fr 1fr 1fr 1fr 1fr;grid-gap:10px;grid-auto-flow:dense}.relationships label,.relationships img{max-height:320px;padding:0;width:105px;height:fit-content}input[type="checkbox"]:checked+label{border:3px solid var(--main-color)}input[type="checkbox"]:checked+*+.relationship-content{display:block;grid-column:1 / -1}.relationship-content{border:1px solid var(--main-color);background-color:var(--secondary-color);padding:10px}.card h1{font-family:var(--title-font),sans-serif;font-weight:400;font-style:normal;margin:0;color:var(--main-color);font-size:var(--title-font-size);line-height:var(--title-line-height)}.relationship-content span{color:var(--main-color)}.relationship-content h2{margin:0!important}.card h2{font-family:var(--title-font),sans-serif;font-weight:400;font-style:normal;margin:0 0 5px 15px;color:var(--main-color);font-size:var(--cat-font-size);line-height:var(--cat-line-height)}.informations{background:var(--secondary-color);border:1px solid var(--main-color)}.informations h2,.informations div{margin-left:15px}.informations h1{margin:0;text-align:center}.informations .top{display:flex}.informations .top span{background:var(--secondary-color);padding:2px;margin:5px;border:1px solid var(--main-color)}.informations .top label{border:none;background:none;font-family:inherit;font-weight:initial;color:var(--main-color);font-size:var(--cat-font-size);line-height:var(--cat-line-height)}.tcard-content,.tcard-rank-content{margin:0 auto}.inventories{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;background:var(--main-color);gap:1px;margin-right:15px}.informations .top img:first-child{min-height:150px;max-height:150px;min-width:150px;max-width:150px;object-fit:none;border:1px solid var(--main-color)}.informations .inform{max-height:150px;height:150px;overflow-y:auto;overflow-x:hidden;margin-right:15px;scrollbar-color:var(--main-color) var(--secondary-color);scrollbar-width:thin;text-align:justify}.inventory{margin:0!important;background:var(--secondary-color);width:100%}.inventory-content{font-size:var(--small-font-size);margin:0 0 10px 15px!important;line-height:var(--small-line-height)}.inventory label{background:none;border:none}.money{text-align:center;margin:20px 0}.money img{max-height:25px}.cs{font-size:var(--smaller-font-size);display:grid;grid-template-columns:1fr 1fr;margin-right:15px;background:var(--main-color);gap:0 1px;margin-bottom:20px;line-height:var(--small-line-height)}.cs span{background:var(--secondary-color);padding-left:5px}.links{text-align:center;padding:2px;margin:5px 5px 20px 5px;width:150px}.tcards{text-align:center}.links label{text-align:center;display:initial;font-size:initial;border:none;font-family:inherit;background:inherit;color:var(--main-color)}.informations input[type="checkbox"]:checked+label{border:none}.links label:hover{color:var(--tertiary-color)!important}&lt;&sol;style&gt;</pre>
+            <button class="copy-btn">Copier</button>
+
+            <br>
+
+            <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseFont" role="button" aria-expanded="false" aria-controls="collapseFont">
+                Modifier la police
+            </a>
+
+            <div class="collapse" id="collapseFont">
+                <div class="card card-body">
+                    <ol>
+                        <li>Aller sur <a href="https://fonts.google.com/" target="_blank">Google Font</a></li>
+                        <li>
+                            Rechercher les polices et les ajouter au panier en cliquant sur "Get Font"
+                            <br><img src="assets/leonis/font1.png" alt="">
+                        </li>
+                        <li>Si besoin, retourner chercher d'autres polices</li>
+                        <li>
+                            Une fois toutes les polices choisies, sur la page "Get Font", supprimer les polices en trop s'il y en a, puis cliquer sur "Get embed code"
+                            <br><img src="assets/leonis/font2.png" alt="">
+                        </li>
+                        <li>
+                            Sélectionner "@import" puis copier la ligne entourée et la coller au début du style
+                            <br><img src="assets/leonis/font3.png" alt="">
+                        </li>
+                        <li>
+                            Copier le nom de la police et remplacer <b>Bebas Neue</b> pour les titres et <b>Roboto</b> pour le reste
+                            <br><img src="assets/leonis/font4.png" alt="">
+                        </li>
+                    </ol>
+                </div>
+            </div>
+
+            <br>
+            <br>
+
+            <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseColors" role="button" aria-expanded="false" aria-controls="collapseColors">
+                Modifier les couleurs
+            </a>
+            <div class="collapse" id="collapseColors">
+                <div class="card card-body">
+                    <div class="alert alert-info" role="alert">
+                        Chaque couleur est définie une fois en début de style. Il n'y a donc qu'un remplacement à faire à chaque fois.
+                    </div>
+
+                    <h3>Couleur principale</h3>
+                    Rechercher et remplacer <b>MAINCOLOR</b> <br>
+                    Modifiera les endroits en rouge :<br>
+                    <img src="assets/leonis/maincolor1.png" alt="">
+                    <img src="assets/leonis/maincolor2.png" alt="">
+                    <img src="assets/leonis/maincolor3.png" alt="">
+
+                    <h3>Couleur secondaire</h3>
+                    Rechercher et remplacer <b>SECCOLOR</b> <br>
+                    Modifiera les endroits en rouge :<br>
+                    <img src="assets/leonis/seccolor1.png" alt="">
+                    <img src="assets/leonis/seccolor2.png" alt="">
+                    <img src="assets/leonis/seccolor3.png" alt="">
+
+                    <h3>Couleur secondaire</h3>
+                    Rechercher et remplacer <b>TERCOLOR</b> <br>
+                    Modifiera les liens quand on passe la souris au-dessus :<br>
+                    <img src="assets/leonis/tercolor1.png" alt="">
+                    <img src="assets/leonis/tercolor2.png" alt="">
+                </div>
+            </div>
+
+            <br>
+            <br>
+
+            <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseFontSize" role="button" aria-expanded="false" aria-controls="collapseFontSize">
+                Modifier les tailles de polices
+            </a>
+            <div class="collapse" id="collapseFontSize">
+                <div class="card card-body">
+                    <div class="alert alert-info" role="alert">
+                        A chaque fois XXXSIZE correspond à la taille du texte et XXXHEIGHT à la hauteur de la ligne.
+                        <br>
+                        En pixel, commencer par XXXHEIGHT = XXXSIZE * 1.4, puis ajuster. <br>
+                        En rem, commencer par XXXHEIGHT = XXXSIZE + 0.2, puis ajuster.
+                    </div>
+
+                    <h3>Titres</h3>
+                    Rechercher et remplacer <b>TITLESIZE</b> et <b>TITLEHEIGHT</b> <br>
+                    Modifiera le titre de la partie "informations" :<br>
+                    <img src="assets/leonis/titlesize.png" alt="">
+
+                    <h3>Catégorie</h3>
+                    Rechercher et remplacer <b>CATSIZE</b> et <b>CATHEIGHT</b> <br>
+                    Modifiera :<br>
+                    <img src="assets/leonis/catsize1.png" alt="">
+                    <img src="assets/leonis/catsize2.png" alt="">
+                    <img src="assets/leonis/catsize3.png" alt="">
+
+                    <h3>Global</h3>
+                    Rechercher et remplacer <b>GLOBSIZE</b> et <b>GLOBHEIGHT</b> <br>
+                    Modifiera :<br>
+                    <img src="assets/leonis/catsize1.png" alt="">
+                    <img src="assets/leonis/catsize2.png" alt="">
+                    <img src="assets/leonis/catsize3.png" alt="">
+
+                    <h3>Petits textes</h3>
+                    Rechercher et remplacer <b>SMALLSIZE</b> et <b>SMALLHEIGHT</b> <br>
+                    Modifiera :<br>
+                    <img src="assets/leonis/smallsize1.png" alt="">
+                    <img src="assets/leonis/smallsize2.png" alt="">
+
+                    <h3>Très petits textes</h3>
+                    Rechercher et remplacer <b>SMALLERSIZE</b><br>
+                    Hauteur de ligne commune avec SMALLSIZE, alors il est conseillé de prendre des valeurs se rapprochant l'une de l'autre.<br>
+                    Modifiera :<br>
+                    <img src="assets/leonis/smallersize1.png" alt="">
+                    <img src="assets/leonis/smallersize2.png" alt="">
+                </div>
+
+                <br><br>
+
+                <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseIcon" role="button" aria-expanded="false" aria-controls="collapseIcon">
+                    Ajouter / changer une icône
+                </a>
+                <div class="collapse" id="collapseIcon">
+                    <div class="card card-body">
+                        <ol>
+                            <li>Aller sur <a href="https://icons.getbootstrap.com/" target="_blank">https://icons.getbootstrap.com</a> </li>
+                            <li>Rechercher l'icône voulue et cliquer dessus</li>
+                            <li>Rechercher l'icône voulue et cliquer dessus</li>
+                            <li>Copier le "font web" (le <code><i class="bi xxxxxx"></i></code> sur la droite)</li>
+                            <li>Coller là où il y a besoin</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="tab-pane fade" id="pills-info" role="tabpanel" aria-labelledby="pills-info-tab" tabindex="0">
+            <pre>&lt;div class&equals;&quot;card informations&quot;&gt;&lt;&excl;--&NewLine;--&gt;&lt;h1&gt;NOM PRENOM&lt;&sol;h1&gt;&lt;&excl;--&NewLine;--&gt;&lt;div class&equals;&quot;top&quot;&gt;&lt;&excl;--&NewLine;--&gt;&lt;img src&equals;&quot;AVATAR&quot; alt&equals;&quot;&quot;&gt;&lt;&excl;--&NewLine;--&gt;&lt;div class&equals;&quot;inform&quot;&gt;&lt;&excl;--&NewLine;--&gt;DESCRIPTION&lt;&excl;--&NewLine;--&gt;&lt;&sol;div&gt;&lt;&excl;--&NewLine;--&gt;&lt;&sol;div&gt;&lt;&excl;--&NewLine;&NewLine;--&gt;&lt;div class&equals;&quot;links&quot;&gt;&lt;&excl;--&NewLine;--&gt;&lt;a href&equals;&quot;LIEN&lowbar;NDM&quot; title&equals;&quot;ndm&quot;&gt;&lt;i class&equals;&quot;bi bi-list-ol&quot;&gt;&lt;&sol;i&gt;&lt;&sol;a&gt;&lt;&excl;--&NewLine;--&gt; &bull; &lt;&excl;--&NewLine;--&gt;&lt;a href&equals;&quot;LIEN&lowbar;PRESENTATION&quot; title&equals;&quot;prez&quot;&gt;&lt;i class&equals;&quot;bi bi-person-lines-fill&quot;&gt;&lt;&sol;i&gt;&lt;&sol;a&gt;&lt;&excl;--&NewLine;--&gt; &bull; &lt;&excl;--&NewLine;--&gt;&lt;label for&equals;&quot;tcard&quot; title&equals;&quot;tcard&quot;&gt;&lt;i class&equals;&quot;bi bi-card-list&quot;&gt;&lt;&sol;i&gt;&lt;&sol;label&gt;&lt;&excl;--&NewLine;--&gt; &bull; &lt;&excl;--&NewLine;--&gt;&lt;label for&equals;&quot;tcard-rank&quot; title&equals;&quot;tcard rang&quot;&gt;&lt;i class&equals;&quot;bi bi-egg-fill&quot;&gt;&lt;&sol;i&gt;&lt;&sol;label&gt;&lt;&excl;--&NewLine;--&gt;&lt;&sol;div&gt;&lt;&excl;--&NewLine;&NewLine;--&gt;&lt;div class&equals;&quot;tcards&quot;&gt;&lt;&excl;--&NewLine;--&gt;&lt;input type&equals;&quot;checkbox&quot; name&equals;&quot;tcard&quot; id&equals;&quot;tcard&quot;&gt;&lt;&excl;--&NewLine;--&gt;&lt;input type&equals;&quot;checkbox&quot; name&equals;&quot;tcard&quot; id&equals;&quot;tcard-rank&quot;&gt;&lt;&excl;--&NewLine;--&gt;&lt;img class&equals;&quot;tcard-content&quot; src&equals;&quot;IMG&lowbar;TCARD&quot; alt&equals;&quot;&quot;&gt;&lt;&excl;--&NewLine;--&gt;&lt;img class&equals;&quot;tcard-rank-content&quot; src&equals;&quot;IMG&lowbar;TCARD&lowbar;RANG&quot; alt&equals;&quot;&quot;&gt;&lt;&excl;--&NewLine;--&gt;&lt;&sol;div&gt;&lt;&excl;--&NewLine;&NewLine;--&gt;&lt;h2&gt;Inventaire&lt;&sol;h2&gt;&lt;&excl;--&NewLine;--&gt;&lt;div class&equals;&quot;inventories&quot;&gt;&lt;&excl;--&NewLine;--&gt;&lt;div class&equals;&quot;inventory&quot;&gt;&lt;&excl;--&NewLine;--&gt;&lt;label for&equals;&quot;capture&quot;&gt;&lt;img src&equals;&quot;https&colon;&sol;&sol;i&period;imgur&period;com&sol;AGyntbz&period;png&quot;&gt;Capture&lt;&sol;label&gt;&lt;&excl;--&NewLine;--&gt;&lt;input type&equals;&quot;checkbox&quot; name&equals;&quot;inventory&quot; id&equals;&quot;capture&quot;&gt;&lt;&excl;--&NewLine;--&gt;&lt;div class&equals;&quot;inventory-content&quot;&gt;&lt;&excl;--&NewLine;--&gt;1 ITEM PAR LIGNE&NewLine;1 ITEM PAR LIGNE&lt;&excl;--&NewLine;--&gt;&lt;&sol;div&gt;&lt;&excl;--&NewLine;--&gt;&lt;&sol;div&gt;&lt;&excl;--&NewLine;&NewLine;--&gt;&lt;div class&equals;&quot;inventory&quot;&gt;&lt;&excl;--&NewLine;--&gt;&lt;label for&equals;&quot;soin&quot;&gt;&lt;img src&equals;&quot;https&colon;&sol;&sol;i&period;imgur&period;com&sol;Gc335nS&period;png&quot; alt&equals;&quot;&quot;&gt;Soin&lt;&sol;label&gt;&lt;&excl;--&NewLine;--&gt;&lt;input type&equals;&quot;checkbox&quot; name&equals;&quot;inventory&quot; id&equals;&quot;soin&quot;&gt;&lt;&excl;--&NewLine;--&gt;&lt;div class&equals;&quot;inventory-content&quot;&gt;&lt;&excl;--&NewLine;--&gt;1 ITEM PAR LIGNE&NewLine;1 ITEM PAR LIGNE&lt;&excl;--&NewLine;--&gt;&lt;&sol;div&gt;&lt;&excl;--&NewLine;--&gt;&lt;&sol;div&gt;&lt;&excl;--&NewLine;&NewLine;--&gt;&lt;div class&equals;&quot;inventory&quot;&gt;&lt;&excl;--&NewLine;--&gt;&lt;label for&equals;&quot;pierres&quot;&gt;&lt;img src&equals;&quot;https&colon;&sol;&sol;i&period;imgur&period;com&sol;th6B6SJ&period;png&quot; alt&equals;&quot;&quot;&gt;Pierres&lt;&sol;label&gt;&lt;&excl;--&NewLine;--&gt;&lt;input type&equals;&quot;checkbox&quot; name&equals;&quot;inventory&quot; id&equals;&quot;pierres&quot;&gt;&lt;&excl;--&NewLine;--&gt;&lt;div class&equals;&quot;inventory-content&quot;&gt;&lt;&excl;--&NewLine;--&gt;1 ITEM PAR LIGNE&NewLine;1 ITEM PAR LIGNE&lt;&excl;--&NewLine;--&gt;&lt;&sol;div&gt;&lt;&excl;--&NewLine;--&gt;&lt;&sol;div&gt;&lt;&excl;--&NewLine;&NewLine;--&gt;&lt;div class&equals;&quot;inventory&quot;&gt;&lt;&excl;--&NewLine;--&gt;&lt;label for&equals;&quot;vitamines&quot;&gt;&lt;img src&equals;&quot;https&colon;&sol;&sol;i&period;imgur&period;com&sol;qD3GHQB&period;png&quot; alt&equals;&quot;&quot;&gt;Vitamines&lt;&sol;label&gt;&lt;&excl;--&NewLine;--&gt;&lt;input type&equals;&quot;checkbox&quot; name&equals;&quot;inventory&quot; id&equals;&quot;vitamines&quot;&gt;&lt;&excl;--&NewLine;--&gt;&lt;div class&equals;&quot;inventory-content&quot;&gt;&lt;&excl;--&NewLine;--&gt;1 ITEM PAR LIGNE&NewLine;1 ITEM PAR LIGNE&lt;&excl;--&NewLine;--&gt;&lt;&sol;div&gt;&lt;&excl;--&NewLine;--&gt;&lt;&sol;div&gt;&lt;&excl;--&NewLine;&NewLine;--&gt;&lt;div class&equals;&quot;inventory&quot;&gt;&lt;&excl;--&NewLine;--&gt;&lt;label for&equals;&quot;flutes&quot;&gt;&lt;img src&equals;&quot;https&colon;&sol;&sol;i&period;imgur&period;com&sol;Ai4pNsy&period;png&quot; alt&equals;&quot;&quot;&gt;Fl&ucirc;tes &amp; Cannes&lt;&sol;label&gt;&lt;&excl;--&NewLine;--&gt;&lt;input type&equals;&quot;checkbox&quot; name&equals;&quot;inventory&quot; id&equals;&quot;flutes&quot;&gt;&lt;&excl;--&NewLine;--&gt;&lt;div class&equals;&quot;inventory-content&quot;&gt;&lt;&excl;--&NewLine;--&gt;1 ITEM PAR LIGNE&NewLine;1 ITEM PAR LIGNE&lt;&excl;--&NewLine;--&gt;&lt;&sol;div&gt;&lt;&excl;--&NewLine;--&gt;&lt;&sol;div&gt;&lt;&excl;--&NewLine;&NewLine;--&gt;&lt;div class&equals;&quot;inventory&quot;&gt;&lt;&excl;--&NewLine;--&gt;&lt;label for&equals;&quot;cs&quot;&gt;&lt;img src&equals;&quot;https&colon;&sol;&sol;i&period;servimg&period;com&sol;u&sol;f56&sol;11&sol;44&sol;54&sol;89&sol;normal10&period;png&quot; alt&equals;&quot;&quot;&gt;CT&sol;CS&lt;&sol;label&gt;&lt;&excl;--&NewLine;--&gt;&lt;input type&equals;&quot;checkbox&quot; name&equals;&quot;inventory&quot; id&equals;&quot;cs&quot;&gt;&lt;&excl;--&NewLine;--&gt;&lt;div class&equals;&quot;inventory-content&quot;&gt;&lt;&excl;--&NewLine;--&gt;1 ITEM PAR LIGNE&NewLine;1 ITEM PAR LIGNE&lt;&excl;--&NewLine;--&gt;&lt;&sol;div&gt;&lt;&excl;--&NewLine;--&gt;&lt;&sol;div&gt;&lt;&excl;--&NewLine;&NewLine;--&gt;&lt;div class&equals;&quot;inventory&quot;&gt;&lt;&excl;--&NewLine;--&gt;&lt;label for&equals;&quot;rare&quot;&gt;&lt;img src&equals;&quot;https&colon;&sol;&sol;i&period;servimg&period;com&sol;u&sol;f10&sol;11&sol;44&sol;54&sol;89&sol;chef10&period;png&quot; alt&equals;&quot;&quot;&gt;Rares&lt;&sol;label&gt;&lt;&excl;--&NewLine;--&gt;&lt;input type&equals;&quot;checkbox&quot; name&equals;&quot;inventory&quot; id&equals;&quot;rare&quot;&gt;&lt;&excl;--&NewLine;--&gt;&lt;div class&equals;&quot;inventory-content&quot;&gt;&lt;&excl;--&NewLine;--&gt;1 ITEM PAR LIGNE&NewLine;1 ITEM PAR LIENG&lt;&excl;--&NewLine;--&gt;&lt;&sol;div&gt;&lt;&excl;--&NewLine;--&gt;&lt;&sol;div&gt;&lt;&excl;--&NewLine;&NewLine;--&gt;&lt;div class&equals;&quot;inventory&quot;&gt;&lt;&excl;--&NewLine;--&gt;&lt;label for&equals;&quot;baies&quot;&gt;&lt;img src&equals;&quot;https&colon;&sol;&sol;i&period;imgur&period;com&sol;88X7BV9&period;png&quot; alt&equals;&quot;&quot;&gt;Baies&lt;&sol;label&gt;&lt;&excl;--&NewLine;--&gt;&lt;input type&equals;&quot;checkbox&quot; name&equals;&quot;inventory&quot; id&equals;&quot;baies&quot;&gt;&lt;&excl;--&NewLine;--&gt;&lt;div class&equals;&quot;inventory-content&quot;&gt;&lt;&excl;--&NewLine;--&gt; 1 ITEM &sol; LIGNE&NewLine;ITEM&NewLine;ITEM&lt;&excl;--&NewLine;--&gt;&lt;&sol;div&gt;&lt;&excl;--&NewLine;--&gt;&lt;&sol;div&gt;&lt;&excl;--&NewLine;--&gt;&lt;&sol;div&gt;&lt;&excl;--&NewLine;&NewLine;--&gt;&lt;div class&equals;&quot;money&quot;&gt;&lt;img src&equals;&quot;https&colon;&sol;&sol;www&period;pokepedia&period;fr&sol;images&sol;3&sol;31&sol;Ic&percnt;C3&percnt;B4ne&lowbar;Pok&percnt;C3&percnt;A9&lowbar;Dollar&lowbar;EV&period;png&quest;20231005185222&quot; alt&equals;&quot;&quot;&gt; Argent en date du DATE &colon; POKEDOLLARSpk&dollar;&lt;&sol;div&gt;&lt;&excl;--&NewLine;&NewLine;--&gt;&lt;h2&gt;Utilisations CS &sol; Fl&ucirc;tes&lt;&sol;h2&gt;&lt;&excl;--&NewLine;--&gt;&lt;div class&equals;&quot;cs&quot;&gt;&lt;&excl;--&NewLine;--&gt;&lt;span&gt;Coupe &lpar;Disponible - 1X&sol;semaine&rpar; &bull; x&period;x&period;xxxx&lt;&sol;span&gt;&lt;&excl;--&NewLine;--&gt;&lt;span&gt;Vol &lpar;Disponible - 1X&sol;trimestre&rpar; &bull; x&period;x&period;xxxx &lt;&sol;span&gt;&lt;&excl;--&NewLine;--&gt;&lt;span&gt;Force &lpar;Indisponible&rpar; &bull; x&period;x&period;xxxx&lt;&sol;span&gt;&lt;&excl;--&NewLine;--&gt;&lt;span&gt;Anti-Brume &lpar;Disponible - 1x&sol;mois&rpar; &bull; x&period;x&period;xxxx&lt;&sol;span&gt;&lt;&excl;--&NewLine;--&gt;&lt;span&gt;&Eacute;clate-Roc &lpar;Disponible - 1x&sol;mois&rpar; &bull; x&period;x&period;xxxx&lt;&sol;span&gt;&lt;&excl;--&NewLine;--&gt;&lt;span&gt;Cascade &lpar;Indisponible&rpar; &bull; x&period;x&period;xxxx&lt;&sol;span&gt;&lt;&excl;--&NewLine;--&gt;&lt;span&gt;Pok&eacute;fl&ucirc;te Noire &lpar;Disponible - 1x&sol;mois&rpar; &bull; x&period;x&period;xxxx&lt;&sol;span&gt;&lt;&excl;--&NewLine;--&gt;&lt;span&gt;Pok&eacute;fl&ucirc;te Violette &lpar;Disponible - 1x&sol;mois&rpar; &bull; x&period;x&period;xxxx&lt;&sol;span&gt;&lt;&excl;--&NewLine;--&gt;&lt;&sol;div&gt;&lt;&excl;--&NewLine;--&gt;&lt;&sol;div&gt;&lt;&excl;--&NewLine;--&gt;&lt;div class&equals;&quot;credits&quot;&gt;&copy; Inspiration Saya&lt;&sol;div&gt;</pre>
+            <button class="copy-btn">Copier</button>
+            <br>
+
+            <b>AVATAR</b>, minimum 150*150
+        </div>
+
+        <div class="tab-pane fade" id="pills-pokemon" role="tabpanel" aria-labelledby="pills-pokemon-tab" tabindex="0">
+            <h3>Base</h3>
+            <pre>&lt;div class&equals;&quot;card pokemon-card&quot;&gt;&lt;&excl;--&NewLine;NOUVEAU POKEMON A LA PLACE DE CETTE LIGNE&NewLine;--&gt;&lt;div class&equals;&quot;credits&quot;&gt;&copy; Design par Leonis&lt;&sol;div&gt;</pre>
+            <button class="copy-btn">Copier</button>
+
+            <h3>Nouveau Pokémon</h3>
+            <pre>&lt;div class&equals;&quot;card pokemon-card&quot;&gt;&lt;&excl;--&NewLine;--&gt;&lt;div class&equals;&quot;pokemon&quot;&gt;&lt;&excl;--&NewLine;--&gt;&lt;label for&equals;&quot;LABELS&quot; style&equals;&quot;background&colon; BACKGROUND&quot;&gt;&lt;&excl;--&NewLine;--&gt;&lt;img src&equals;&quot;LIEN&lowbar;SPRITE&quot; style&equals;&quot;&quot;&gt;&lt;&excl;--&NewLine;--&gt; &lt;span class&equals;&quot;pokemon-name&quot;&gt;PKMN&lowbar;NAME&lt;&sol;span&gt;&lt;&excl;--&NewLine;--&gt;&lt;&sol;label&gt;&lt;&excl;--&NewLine;--&gt;&lt;input type&equals;&quot;checkbox&quot; name&equals;&quot;pokemon&quot; id&equals;&quot;LABELS&quot;&gt;&lt;&excl;--&NewLine;--&gt;&lt;div class&equals;&quot;pokemon-content&quot; style&equals;&quot;background&colon; BACKGROUND&lowbar;INTERN&semi; border&colon; 1px solid BORDERCOLOR&semi;&quot;&gt;&lt;&excl;--&NewLine;--&gt;&lt;div&gt;&lt;&excl;--&NewLine;--&gt;&lt;div&gt;&lt;&excl;--&NewLine;--&gt;&lt;img class&equals;&quot;sprite&quot; src&equals;&quot;PKMN&lowbar;NAME&ast;96&quot;&gt;&lt;&excl;--&NewLine;--&gt;&lt;span class&equals;&quot;pokemon-name&quot;&gt;PKMN_NAME&lt;&sol;span&gt;&NewLine;&lt;span&gt;&lt;&excl;--&NewLine;--&gt;&lt;img class&equals;&quot;type&quot; src&equals;&quot;IMG&lowbar;TYPE&lowbar;1&quot;&gt; &lt;img class&equals;&quot;type&quot; src&equals;&quot;IMG&lowbar;TYPE&lowbar;2&quot;&gt;&lt;&excl;--&NewLine;--&gt;&lt;&sol;span&gt;&lt;&excl;--&NewLine;--&gt;&lt;&sol;div&gt;&lt;&excl;--&NewLine;--&gt;&lt;div style&equals;&quot;&quot; class&equals;&quot;stats&quot;&gt;&lt;&excl;--&NewLine;--&gt;&lt;span&gt;Points de Vie &bull; XX &plus; 0 &equals; XX&lt;&sol;span&gt;&NewLine;&lt;span&gt;Attaque &bull; XX &plus; 0 &equals; XX&lt;&sol;span&gt;&NewLine;&lt;span&gt;D&eacute;fense &bull; XX &plus; 0 &equals; XX&lt;&sol;span&gt;&NewLine;&lt;span&gt;Attaque Sp&eacute;ciale &bull; XX &plus; 0 &equals; XX&lt;&sol;span&gt;&NewLine;&lt;span&gt;D&eacute;fense Sp&eacute;ciale &bull; XX &plus; 0 &equals; XX&lt;&sol;span&gt;&NewLine;&lt;span&gt;Vitesse &bull; XX &plus; 0 &equals; XX&lt;&sol;span&gt;&NewLine;&lt;span&gt;Points d&apos;Exp&eacute;rience &bull; XX&ast;XX &equals; XX&lt;&sol;span&gt;&lt;&excl;--&NewLine;--&gt;&lt;&sol;div&gt;&lt;&excl;--&NewLine;--&gt;&lt;&sol;div&gt;&lt;&excl;--&NewLine;--&gt;&lt;div style&equals;&quot;border-top&colon; 2px solid BORDERCOLOR&semi;border-bottom&colon; 2px solid BORDERCOLOR&semi;&quot; class&equals;&quot;attacks&quot;&gt;&lt;&excl;--&NewLine;NOUVELLE ATTAQUE A LA PLACE DE CETTE LIGNE&NewLine;--&gt;&lt;&sol;div&gt;&lt;&excl;--&NewLine;--&gt;&lt;div class&equals;&quot;pokemon-additional&quot;&gt;&lt;&excl;--&NewLine;--&gt; INFO&NewLine;&lt;&sol;div&gt;&lt;&excl;--&NewLine;--&gt;&lt;&sol;div&gt;&lt;&excl;--&NewLine;--&gt;&lt;&sol;div&gt;&lt;&excl;--&NewLine;NOUVEAU TYPE POKEMON A LA PLACE DE CETTE LIGNE</pre>
+            <button class="copy-btn">Copier</button>
+            <br>
+            Remplacer tout ce qui est en majuscule.<br>
+
+            <b>BACKGROUND</b> peut être rien, une image ou une couleur :
+            <ul>
+                <li>url('LIEN DE LIMAGE');</li>
+                <li>#HEXA (ex: #12313)</li>
+                <li>COLOR_NAME (ex: blue)</li>
+            </ul>
+
+            Pour le <b>LIEN_SPRITE</b> :
+            <ul>
+                <li>Si sprite de 25 pixel de haut, ne rien faire</li>
+                <li>
+                    Si sprite de 96*96, rajouter <code>object-position: 0 X;</code> dans style.
+                    X correspondant au décalage vertical du sprite pour le positionner correctement.
+                </li>
+            </ul>
+
+            <b>BACKGROUND_INTERN</b> : le background de l'encard déplié. <br>
+            <b>BORDERCOLOR</b> : la couleur des bordures.
+
+            <h3>Liste attaques</h3>
+            <pre>--&gt;&lt;div class&equals;&quot;attack&quot;&gt;&lt;&excl;--&NewLine;--&gt;&lt;span&gt;&lt;&excl;--&NewLine;--&gt;&lt;img class&equals;&quot;type&quot; src&equals;&quot;IMAGE&lowbar;TYPE&lowbar;ATK&quot;&gt;&lt;&excl;--&NewLine;--&gt; &lt;&sol;span&gt;&lt;&excl;--&NewLine;--&gt;&lt;span&gt;&lt;&excl;--&NewLine;--&gt;LISTE ATTAQUES&NewLine;1 PAR LIGNE&NewLine;&lt;&sol;span&gt;&lt;&excl;--&NewLine;--&gt;&lt;&sol;div&gt;&lt;&excl;--&NewLine;NOUVEAU TYPE ATTAQUE A LA PLACE DE CETTE LIGNE</pre>
+            <button class="copy-btn">Copier</button>
+            <br>
+            Remplacer tout ce qui est en majuscule.<br>
+        </div>
+
+        <div class="tab-pane fade" id="pills-history" role="tabpanel" aria-labelledby="pills-history-tab" tabindex="0">
+            <h3>Base</h3>
+            <pre>&lt;div class&equals;&quot;card&quot;&gt;&lt;&excl;--&NewLine;--&gt;&lt;div class&equals;&quot;history&quot;&gt;&lt;&excl;--&NewLine;--&gt;&lt;label for&equals;&quot;LABELS&quot;&gt;TITRE&lt;&sol;label&gt;&lt;&excl;--&NewLine;--&gt;&lt;input type&equals;&quot;checkbox&quot; name&equals;&quot;histories&quot; id&equals;&quot;LABELS&quot;&gt;&lt;&excl;--&NewLine;--&gt;&lt;div class&equals;&quot;history-list&quot;&gt;&lt;&excl;--&NewLine;--&gt;AJOUTER ICI LA LISTE DES RPS&NewLine;1 PAR LIGNE&NewLine;&lt;&sol;div&gt;&lt;&excl;--&NewLine;--&gt;&lt;&sol;div&gt;&lt;&excl;--&NewLine;AJOUTER LA SUITE A LA PLACE DE CETTE LIGNE&NewLine;--&gt;&lt;i class&equals;&quot;bi bi-pause-circle&quot;&gt;&lt;&sol;i&gt; En pause - &lt;i class&equals;&quot;bi bi-check-circle&quot;&gt;&lt;&sol;i&gt; Fini - &lt;i class&equals;&quot;bi bi-play-circle&quot;&gt;&lt;&sol;i&gt; En cours - &lt;i class&equals;&quot;bi bi-x-circle&quot;&gt;&lt;&sol;i&gt; Abandonn&eacute;&NewLine;&lt;&sol;div&gt;&NewLine;&lt;div class&equals;&quot;credits&quot;&gt;&copy; Design par Leonis&lt;&sol;div&gt;</pre>
+            <button class="copy-btn">Copier</button>
+
+            <div class="alert alert-info" role="alert">
+                Les deux "LABELS" doivent être remplacées par la même chaîne de caractère sans espace (ex: history2024).
+                Cette chaîne de caractère doit être unique sur la page.
+            </div>
+
+            <h3>Ajout d'une catégorie</h3>
+            <pre>--&gt;&lt;div class&equals;&quot;history&quot;&gt;&lt;&excl;--&NewLine;--&gt;&lt;label for&equals;&quot;LABELS&quot;&gt;TITRE&lt;&sol;label&gt;&lt;&excl;--&NewLine;--&gt;&lt;input type&equals;&quot;checkbox&quot; name&equals;&quot;histories&quot; id&equals;&quot;LABELS&quot;&gt;&lt;&excl;--&NewLine;--&gt;&lt;div class&equals;&quot;history-list&quot;&gt;&lt;&excl;--&NewLine;--&gt;AJOUTER ICI LA LISTE DES RPS&NewLine;1 PAR LIGNE&NewLine;&lt;&sol;div&gt;&lt;&excl;--&NewLine;--&gt;&lt;&sol;div&gt;&lt;&excl;--&NewLine;AJOUTER LA SUITE A LA PLACE DE CETTE LIGNE</pre>
+            <button class="copy-btn">Copier</button>
+
+            <div class="alert alert-info" role="alert">
+                Les deux "LABELS" doivent être remplacées par la même chaîne de caractère sans espace (ex: history2024).
+                Cette chaîne de caractère doit être unique sur la page.
+            </div>
+
+            <h3>Ligne de RP</h3>
+            <pre>ICONSTATUS ICONCAT NOM - FEAT - &lt;a href&equals;&quot;LIEN&quot;&gt;www&lt;&sol;a&gt;</pre>
+            <button class="copy-btn">Copier</button>
+            <br>
+
+            Remplacer tout ce qui est en majuscule.<br>
+            Tu peux mettre ce que tu veux à la place de <b>NOM - FEAT</b>.
+            <br>
+            <br>
+            <b>ICONSTATUS</b> peut être remplacer par : <br>
+            <ul>
+                <li>
+                    <i class="bi bi-pause-circle"></i>
+                    <pre>&lt;i class&equals;&quot;bi bi-pause-circle&quot;&gt;&lt;&sol;i&gt;</pre>
+                    <button class="copy-btn">Copier</button>
+                </li>
+                <li>
+                    <i class="bi bi-check-circle"></i>
+                    <pre>&lt;i class&equals;&quot;bi bi-check-circle&quot;&gt;&lt;&sol;i&gt;</pre>
+                    <button class="copy-btn">Copier</button>
+                </li>
+                <li>
+                    <i class="bi bi-play-circle"></i>
+                    <pre>&lt;i class&equals;&quot;bi bi-play-circle&quot;&gt;&lt;&sol;i&gt;</pre>
+                    <button class="copy-btn">Copier</button>
+                </li>
+                <li>
+                    <i class="bi bi-x-circle"></i>
+                    <pre>&lt;i class&equals;&quot;bi bi-x-circle&quot;&gt;&lt;&sol;i&gt;</pre>
+                    <button class="copy-btn">Copier</button>
+                </li>
+            </ul>
+            <b>ICONCAT</b>, tu peux mettre ce que tu veux qui vient d'<a href="https://icons.getbootstrap.com/" target="_blank">ici</a>.<br>
+            Présélection :
+            <ul>
+                <li>
+                    <i class="bi bi-backpack"></i>
+                    <pre>&lt;i class&equals;&quot;bi bi-backpack&quot;&gt;&lt;&sol;i&gt;</pre>
+                    <button class="copy-btn">Copier</button>
+                </li>
+                <li>
+                    <i class="bi bi-hammer"></i>
+                    <pre>&lt;i class&equals;&quot;bi bi-hammer&quot;&gt;&lt;&sol;i&gt;</pre>
+                    <button class="copy-btn">Copier</button>
+                </li>
+                <li>
+                    <i class="bi bi-tree"></i>
+                    <pre>&lt;i class&equals;&quot;bi bi-tree&quot;&gt;&lt;&sol;i&gt;</pre>
+                    <button class="copy-btn">Copier</button>
+                </li>
+                <li>
+                    <i class="bi bi-cake"></i>
+                    <pre>&lt;i class&equals;&quot;bi bi-cake&quot;&gt;&lt;&sol;i&gt;</pre>
+                    <button class="copy-btn">Copier</button>
+                </li>
+                <li>
+                    <i class="bi bi-cart"></i>
+                    <pre>&lt;i class&equals;&quot;bi bi-cart&quot;&gt;&lt;&sol;i&gt;</pre>
+                    <button class="copy-btn">Copier</button>
+                </li>
+                <li>
+                    <i class="bi bi-credit-card"></i>
+                    <pre>&lt;i class&equals;&quot;bi bi-credit-card&quot;&gt;&lt;&sol;i&gt;</pre>
+                    <button class="copy-btn">Copier</button>
+                </li>
+                <li>
+                    <i class="bi bi-feather"></i>
+                    <pre>&lt;i class&equals;&quot;bi bi-feather&quot;&gt;&lt;&sol;i&gt;</pre>
+                    <button class="copy-btn">Copier</button>
+                </li>
+                <li>
+                    <i class="bi bi-rocket-takeoff"></i>
+                    <pre>&lt;i class&equals;&quot;bi bi-rocket-takeoff&quot;&gt;&lt;&sol;i&gt;</pre>
+                    <button class="copy-btn">Copier</button>
+                </li>
+                <li>
+                    <i class="bi bi-shield"></i>
+                    <pre>&lt;i class&equals;&quot;bi bi-shield&quot;&gt;&lt;&sol;i&gt;</pre>
+                    <button class="copy-btn">Copier</button>
+                </li>
+            </ul>
+        </div>
+
+        <div class="tab-pane fade" id="pills-people" role="tabpanel" aria-labelledby="pills-people-tab" tabindex="0">
+            <h3>Base</h3>
+            <pre>&lt;div class&equals;&quot;card&quot;&gt;&lt;&excl;--&NewLine;--&gt;&lt;div class&equals;&quot;relationships&quot;&gt;&lt;&excl;--&NewLine;NOUVELLE RELATION A LA PLACE DE CETTE LIGNE&NewLine;--&gt;&lt;&sol;div&gt;&lt;&excl;--&NewLine;--&gt;&lt;div class&equals;&quot;credits&quot;&gt;&copy; Design par Leonis&lt;&sol;div&gt;</pre>
+            <button class="copy-btn">Copier</button>
+
+            <h3>Nouvelle connaissance</h3>
+            <pre>--&gt;&lt;input type&equals;&quot;checkbox&quot; name&equals;&quot;relationships&quot; id&equals;&quot;LABELS&quot;&gt;&lt;&excl;--&NewLine;--&gt;&lt;label for&equals;&quot;LABELS&quot;&gt;&lt;&excl;--&NewLine;--&gt;&lt;img src&equals;&quot;IMAGE&quot;&gt;&lt;&excl;--&NewLine;--&gt;&lt;&sol;label&gt;&lt;&excl;--&NewLine;--&gt;&lt;div class&equals;&quot;relationship-content&quot;&gt;&lt;&excl;--&NewLine;--&gt;&lt;h2&gt;NOM&lt;&sol;h2&gt;&lt;&excl;--&NewLine;--&gt;&lt;span&gt;sujet&lpar;s&rpar; en commun&lt;&sol;span&gt; &colon; LISTE&lowbar;SUJETS&NewLine;&lt;span&gt;pkmn&lpar;s&rpar; connu&lpar;s&rpar;&lt;&sol;span&gt; &colon; LISTE&lowbar;PKMN&NewLine;DETAIL&lt;&excl;--&NewLine;--&gt;&lt;&sol;div&gt;&lt;&excl;--&NewLine;NOUVELLE RELATION A LA PLACE DE CETTE LIGNE</pre>
+            <button class="copy-btn">Copier</button>
+
+            <div class="alert alert-info" role="alert">
+                "IMAGE" est prévu pour les images aux tailles du forum.
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+
+<script>
+    const buttons = document.querySelectorAll('.copy-btn');
+
+    buttons.forEach(button => {
+        button.addEventListener('click', () => {
+            const pre = button.previousElementSibling;
+            const text = pre.innerText;
+
+            navigator.clipboard.writeText(text).catch(err => alert("Erreur : " + err));
+        });
+    });
+</script>
